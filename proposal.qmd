@@ -1,11 +1,11 @@
 ---
-title: "Proposal title"
+title: "INFO-523-DATA MININIG_Final Project '**BMW Car Price Analysis & Prediction**'"
 subtitle: "Proposal"
 author: 
-  - name: "Team Name - Team member 1, Team member 2,..."
+  - name: "Team Name - Min Set Khant (Solo)"
     affiliations:
       - name: "College of Information Science, University of Arizona"
-description: "Project description"
+description: "Analyze, visualize, and predict BMW car prices using multi-regional sales data from 2010–2024, exploring how features such as model, region, color, engine size, and transmission influence market value and sales performance."
 format:
   html:
     code-tools: true
@@ -23,6 +23,9 @@ jupyter: python3
 #| label: load-pkgs
 #| message: false
 import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
 ```
 
 ## Dataset
@@ -30,16 +33,40 @@ import numpy as np
 ```{python}
 #| label: load-dataset
 #| message: false
+data = pd.read_csv("data/bmw_worldwide_sales.csv")
+data.head(10)
 ```
-
-A brief description of your dataset including its provenance, dimensions, etc. as well as the reason why you chose this dataset.
-
-Make sure to load the data and use inline code for some of this information.
+## Dataset Overview
+```{python,  label= dataset-summary,message =false,echo= false }
+data.describe()
+data.shape
+```
+This dataset — BMW Worldwide Sales Records (2010–2024)
+ — contains over 50,000 records of BMW’s sales and specifications across multiple regions.
+Key features include:
+Model, Year, Engine_Size_L, Transmission, Fuel_Type, Color, Region, Price, and Sales_Volume.
+This dataset was chosen because it provides a diverse range of attributes for exploring market behavior, pricing trends, and customer preferences in the automotive industry.
 
 ## Questions
+1. How do different car features (engine size, fuel type, transmission, color, etc.) influence BMW car prices?
+2. What regional trends and sales performance patterns can be observed across BMW models from 2010–2024?
 
-The two questions you want to answer.
+## Analysis Plan
 
-## Analysis plan
+- Data Cleaning & Preparation: Handle missing values, standardize units, and convert categorical data for analysis.
+- Exploratory Data Analysis (EDA):
+- Visualize sales by region, model, and year.
+- Explore correlations between price and key vehicle attributes.
 
--   A plan for answering each of the questions including the variables involved, variables to be created (if any), external data to be merged in (if any).
+Modeling :
+
+- Apply regression techniques (e.g., Linear or Decision Tree Regression) to predict car price based on selected features.
+
+Visualization Dashboard:
+
+- Build clear, interactive plots for trends and insights using matplotlib and seaborn.
+
+Ethical AI Use Disclosure:
+
+- AI tools (e.g., ChatGPT) were used ethically for code debugging, idea exploration, and documentation enhancement.
+- All datasets are real and sourced from Kaggle.
