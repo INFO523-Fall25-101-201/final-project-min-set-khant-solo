@@ -48,19 +48,61 @@ Model, Year, Engine_Size_L, Transmission, Fuel_Type, Color, Region, Price, and S
 This dataset was chosen because it provides a diverse range of attributes for exploring market behavior, pricing trends, and customer preferences in the automotive industry.
 
 ## Questions
-1. How do different car features (engine size, fuel type, transmission, color, etc.) influence BMW car prices?
-2. What regional trends and sales performance patterns can be observed across BMW models from 2010–2024?
+1. What are the key factors influencing BMW used-car prices in the market?
+2. Can machine learning models accurately predict used-car prices?
+3. How stable are these predictions over time?
+4. Using a temporal split, how well can the model predict pricing trends for “next year”?
 
 ## Analysis Plan
+1. Data Cleaning & Preparation
 
-- Data Cleaning & Preparation: Handle missing values, standardize units, and convert categorical data for analysis.
-- Exploratory Data Analysis (EDA):
-- Visualize sales by region, model, and year.
-- Explore correlations between price and key vehicle attributes.
+Handle missing values
 
-Modeling :
+Standardize numerical units
 
-- Apply regression techniques (e.g., Linear or Decision Tree Regression) to predict car price based on selected features.
+Encode categorical variables
+
+Ensure time-related variables are aligned for temporal analysis
+
+2. Exploratory Data Analysis (EDA)
+
+Price trends by year, region, and model
+
+Correlation analysis between price and vehicle attributes
+
+Identify patterns that may indicate shifting market preferences
+
+3. Modeling Approach
+
+Apply Machine Learning Models:
+
+Linear Regression
+
+Decision Tree Regression
+
+Random Forest Regression
+
+Evaluate using:
+
+RMSE, MAE, R²
+
+Perform:
+
+Feature importance analysis
+
+Temporal train–test split to simulate predicting next-year price trends
+
+4. Visualization Dashboard
+
+Build clear, interactive visualizations using matplotlib / seaborn
+
+Include:
+
+Price distribution
+
+Trend lines across years
+
+Model performance summary
 
 Visualization Dashboard:
 

@@ -4339,7 +4339,7 @@ var requirejs,require,define;(function(global,setTimeout){var req,s,head,baseEle
 </section>
 <section id="dataset-overview" class="level2">
 <h2 class="anchored" data-anchor-id="dataset-overview">Dataset Overview</h2>
-<div id="9283d4c0" class="cell" data-execution_count="3">
+<div id="abf976e0" class="cell" data-execution_count="3">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1"></a>data.describe()</span>
 <span id="cb3-2"><a href="#cb3-2"></a>data.shape</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="3">
@@ -4351,18 +4351,47 @@ var requirejs,require,define;(function(global,setTimeout){var req,s,head,baseEle
 <section id="questions" class="level2">
 <h2 class="anchored" data-anchor-id="questions">Questions</h2>
 <ol type="1">
-<li>How do different car features (engine size, fuel type, transmission, color, etc.) influence BMW car prices?</li>
-<li>What regional trends and sales performance patterns can be observed across BMW models from 2010–2024?</li>
+<li>What are the key factors influencing BMW used-car prices in the market?</li>
+<li>Can machine learning models accurately predict used-car prices?</li>
+<li>How stable are these predictions over time?</li>
+<li>Using a temporal split, how well can the model predict pricing trends for “next year”?</li>
 </ol>
 </section>
 <section id="analysis-plan" class="level2">
 <h2 class="anchored" data-anchor-id="analysis-plan">Analysis Plan</h2>
-<ul>
-<li>Data Cleaning &amp; Preparation: Handle missing values, standardize units, and convert categorical data for analysis.</li>
-<li>Exploratory Data Analysis (EDA):</li>
-<li>Visualize sales by region, model, and year.</li>
-<li>Explore correlations between price and key vehicle attributes.</li>
-</ul>
+<ol type="1">
+<li>Data Cleaning &amp; Preparation</li>
+</ol>
+<p>Handle missing values</p>
+<p>Standardize numerical units</p>
+<p>Encode categorical variables</p>
+<p>Ensure time-related variables are aligned for temporal analysis</p>
+<ol start="2" type="1">
+<li>Exploratory Data Analysis (EDA)</li>
+</ol>
+<p>Price trends by year, region, and model</p>
+<p>Correlation analysis between price and vehicle attributes</p>
+<p>Identify patterns that may indicate shifting market preferences</p>
+<ol start="3" type="1">
+<li>Modeling Approach</li>
+</ol>
+<p>Apply Machine Learning Models:</p>
+<p>Linear Regression</p>
+<p>Decision Tree Regression</p>
+<p>Random Forest Regression</p>
+<p>Evaluate using:</p>
+<p>RMSE, MAE, R²</p>
+<p>Perform:</p>
+<p>Feature importance analysis</p>
+<p>Temporal train–test split to simulate predicting next-year price trends</p>
+<ol start="4" type="1">
+<li>Visualization Dashboard</li>
+</ol>
+<p>Build clear, interactive visualizations using matplotlib / seaborn</p>
+<p>Include:</p>
+<p>Price distribution</p>
+<p>Trend lines across years</p>
+<p>Model performance summary</p>
 <p>Modeling :</p>
 <ul>
 <li>Apply regression techniques (e.g., Linear or Decision Tree Regression) to predict car price based on selected features.</li>
@@ -4936,28 +4965,74 @@ var requirejs,require,define;(function(global,setTimeout){var req,s,head,baseEle
 <span id="cb5-52"><a href="#cb5-52"></a>This dataset was chosen because it provides a diverse range of attributes for exploring market behavior, pricing trends, and customer preferences in the automotive industry.</span>
 <span id="cb5-53"><a href="#cb5-53"></a></span>
 <span id="cb5-54"><a href="#cb5-54"></a><span class="fu">## Questions</span></span>
-<span id="cb5-55"><a href="#cb5-55"></a><span class="ss">1. </span>How do different car features (engine size, fuel type, transmission, color, etc.) influence BMW car prices?</span>
-<span id="cb5-56"><a href="#cb5-56"></a><span class="ss">2. </span>What regional trends and sales performance patterns can be observed across BMW models from 2010–2024?</span>
-<span id="cb5-57"><a href="#cb5-57"></a></span>
-<span id="cb5-58"><a href="#cb5-58"></a><span class="fu">## Analysis Plan</span></span>
+<span id="cb5-55"><a href="#cb5-55"></a><span class="ss">1. </span>What are the key factors influencing BMW used-car prices in the market?</span>
+<span id="cb5-56"><a href="#cb5-56"></a><span class="ss">2. </span>Can machine learning models accurately predict used-car prices?</span>
+<span id="cb5-57"><a href="#cb5-57"></a><span class="ss">3. </span>How stable are these predictions over time?</span>
+<span id="cb5-58"><a href="#cb5-58"></a><span class="ss">4. </span>Using a temporal split, how well can the model predict pricing trends for “next year”?</span>
 <span id="cb5-59"><a href="#cb5-59"></a></span>
-<span id="cb5-60"><a href="#cb5-60"></a><span class="ss">- </span>Data Cleaning &amp; Preparation: Handle missing values, standardize units, and convert categorical data for analysis.</span>
-<span id="cb5-61"><a href="#cb5-61"></a><span class="ss">- </span>Exploratory Data Analysis (EDA):</span>
-<span id="cb5-62"><a href="#cb5-62"></a><span class="ss">- </span>Visualize sales by region, model, and year.</span>
-<span id="cb5-63"><a href="#cb5-63"></a><span class="ss">- </span>Explore correlations between price and key vehicle attributes.</span>
+<span id="cb5-60"><a href="#cb5-60"></a><span class="fu">## Analysis Plan</span></span>
+<span id="cb5-61"><a href="#cb5-61"></a><span class="ss">1. </span>Data Cleaning &amp; Preparation</span>
+<span id="cb5-62"><a href="#cb5-62"></a></span>
+<span id="cb5-63"><a href="#cb5-63"></a>Handle missing values</span>
 <span id="cb5-64"><a href="#cb5-64"></a></span>
-<span id="cb5-65"><a href="#cb5-65"></a>Modeling :</span>
+<span id="cb5-65"><a href="#cb5-65"></a>Standardize numerical units</span>
 <span id="cb5-66"><a href="#cb5-66"></a></span>
-<span id="cb5-67"><a href="#cb5-67"></a><span class="ss">- </span>Apply regression techniques (e.g., Linear or Decision Tree Regression) to predict car price based on selected features.</span>
+<span id="cb5-67"><a href="#cb5-67"></a>Encode categorical variables</span>
 <span id="cb5-68"><a href="#cb5-68"></a></span>
-<span id="cb5-69"><a href="#cb5-69"></a>Visualization Dashboard:</span>
+<span id="cb5-69"><a href="#cb5-69"></a>Ensure time-related variables are aligned for temporal analysis</span>
 <span id="cb5-70"><a href="#cb5-70"></a></span>
-<span id="cb5-71"><a href="#cb5-71"></a><span class="ss">- </span>Build clear, interactive plots for trends and insights using matplotlib and seaborn.</span>
+<span id="cb5-71"><a href="#cb5-71"></a><span class="ss">2. </span>Exploratory Data Analysis (EDA)</span>
 <span id="cb5-72"><a href="#cb5-72"></a></span>
-<span id="cb5-73"><a href="#cb5-73"></a>Ethical AI Use Disclosure:</span>
+<span id="cb5-73"><a href="#cb5-73"></a>Price trends by year, region, and model</span>
 <span id="cb5-74"><a href="#cb5-74"></a></span>
-<span id="cb5-75"><a href="#cb5-75"></a><span class="ss">- </span>AI tools (e.g., ChatGPT) were used ethically for code debugging, idea exploration, and documentation enhancement.</span>
-<span id="cb5-76"><a href="#cb5-76"></a><span class="ss">- </span>All datasets are real and sourced from Kaggle.</span>
+<span id="cb5-75"><a href="#cb5-75"></a>Correlation analysis between price and vehicle attributes</span>
+<span id="cb5-76"><a href="#cb5-76"></a></span>
+<span id="cb5-77"><a href="#cb5-77"></a>Identify patterns that may indicate shifting market preferences</span>
+<span id="cb5-78"><a href="#cb5-78"></a></span>
+<span id="cb5-79"><a href="#cb5-79"></a><span class="ss">3. </span>Modeling Approach</span>
+<span id="cb5-80"><a href="#cb5-80"></a></span>
+<span id="cb5-81"><a href="#cb5-81"></a>Apply Machine Learning Models:</span>
+<span id="cb5-82"><a href="#cb5-82"></a></span>
+<span id="cb5-83"><a href="#cb5-83"></a>Linear Regression</span>
+<span id="cb5-84"><a href="#cb5-84"></a></span>
+<span id="cb5-85"><a href="#cb5-85"></a>Decision Tree Regression</span>
+<span id="cb5-86"><a href="#cb5-86"></a></span>
+<span id="cb5-87"><a href="#cb5-87"></a>Random Forest Regression</span>
+<span id="cb5-88"><a href="#cb5-88"></a></span>
+<span id="cb5-89"><a href="#cb5-89"></a>Evaluate using:</span>
+<span id="cb5-90"><a href="#cb5-90"></a></span>
+<span id="cb5-91"><a href="#cb5-91"></a>RMSE, MAE, R²</span>
+<span id="cb5-92"><a href="#cb5-92"></a></span>
+<span id="cb5-93"><a href="#cb5-93"></a>Perform:</span>
+<span id="cb5-94"><a href="#cb5-94"></a></span>
+<span id="cb5-95"><a href="#cb5-95"></a>Feature importance analysis</span>
+<span id="cb5-96"><a href="#cb5-96"></a></span>
+<span id="cb5-97"><a href="#cb5-97"></a>Temporal train–test split to simulate predicting next-year price trends</span>
+<span id="cb5-98"><a href="#cb5-98"></a></span>
+<span id="cb5-99"><a href="#cb5-99"></a><span class="ss">4. </span>Visualization Dashboard</span>
+<span id="cb5-100"><a href="#cb5-100"></a></span>
+<span id="cb5-101"><a href="#cb5-101"></a>Build clear, interactive visualizations using matplotlib / seaborn</span>
+<span id="cb5-102"><a href="#cb5-102"></a></span>
+<span id="cb5-103"><a href="#cb5-103"></a>Include:</span>
+<span id="cb5-104"><a href="#cb5-104"></a></span>
+<span id="cb5-105"><a href="#cb5-105"></a>Price distribution</span>
+<span id="cb5-106"><a href="#cb5-106"></a></span>
+<span id="cb5-107"><a href="#cb5-107"></a>Trend lines across years</span>
+<span id="cb5-108"><a href="#cb5-108"></a></span>
+<span id="cb5-109"><a href="#cb5-109"></a>Model performance summary</span>
+<span id="cb5-110"><a href="#cb5-110"></a></span>
+<span id="cb5-111"><a href="#cb5-111"></a>Modeling :</span>
+<span id="cb5-112"><a href="#cb5-112"></a></span>
+<span id="cb5-113"><a href="#cb5-113"></a><span class="ss">- </span>Apply regression techniques (e.g., Linear or Decision Tree Regression) to predict car price based on selected features.</span>
+<span id="cb5-114"><a href="#cb5-114"></a></span>
+<span id="cb5-115"><a href="#cb5-115"></a>Visualization Dashboard:</span>
+<span id="cb5-116"><a href="#cb5-116"></a></span>
+<span id="cb5-117"><a href="#cb5-117"></a><span class="ss">- </span>Build clear, interactive plots for trends and insights using matplotlib and seaborn.</span>
+<span id="cb5-118"><a href="#cb5-118"></a></span>
+<span id="cb5-119"><a href="#cb5-119"></a>Ethical AI Use Disclosure:</span>
+<span id="cb5-120"><a href="#cb5-120"></a></span>
+<span id="cb5-121"><a href="#cb5-121"></a><span class="ss">- </span>AI tools (e.g., ChatGPT) were used ethically for code debugging, idea exploration, and documentation enhancement.</span>
+<span id="cb5-122"><a href="#cb5-122"></a><span class="ss">- </span>All datasets are real and sourced from Kaggle.</span>
 </code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal><i class="bi"></i></button></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
