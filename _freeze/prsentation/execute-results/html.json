@@ -1,0 +1,12 @@
+{
+  "hash": "7ab079c96ac083f8779c78e4bbc91410",
+  "result": {
+    "engine": "jupyter",
+    "markdown": "---\ntitle: \"Project title\"\nsubtitle: \"INFO 523 - Summer 2025 - Final Project\"\nauthor: \"Author names\"\ntitle-slide-attributes:\n  data-background-image: images/watercolour_sys02_img34_teacup-ocean.jpg\n  data-background-size: stretch\n  data-background-opacity: \"0.7\"\n  data-slide-number: none\nformat:\n  revealjs:\n    theme:  ['data/customtheming.scss']\n  \neditor: visual\njupyter: python3\nexecute:\n  echo: false\n---\n\n## Project Overview\n- Analyze BMW worldwide sales dataset (2010–2024)\n- Clean, preprocess, and engineer features for modeling\n- Perform Exploratory Data Analysis (EDA) to uncover trends\n- Predict car prices using Linear Regression and Random Forest\n- Assess model stability over time and feature importance\n\n---\n\n## Dataset & Cleaning\n- Raw dataset: `bmw_worldwide_sales.csv` (+50,000 rows)\n- Key cleaning steps:\n  - Standardized categorical columns\n  - Handled missing values and duplicates\n  - Created features: Car Age, Log Price, Price per KM\n  - One-hot encoded categorical variables for modeling\n\n---\n\n",
+    "supporting": [
+      "prsentation_files"
+    ],
+    "filters": [],
+    "includes": {}
+  }
+}
