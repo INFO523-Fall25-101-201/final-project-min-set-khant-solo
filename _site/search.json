@@ -173,5 +173,236 @@
     "title": "BMW Car Sales Data Preparation & Cleaning",
     "section": "",
     "text": "import os\nimport pandas as pd\nimport numpy as np\nfrom sklearn.preprocessing import StandardScaler\ndf_model = df.copy()\n# Categorical columns to encode \ncat_cols = ['Region', 'Model', 'Fuel_Type', 'Transmission', 'Color']\n# Convert categorical variables to dummies\ndf_model = pd.get_dummies(df_model, columns=cat_cols, drop_first=True)\n# Create log-transformed columns safely\nfor col in ['Price_USD', 'Sales_Volume']:\n    new_col = 'log_' + col\n    df_model[new_col] = df_model[col].apply(lambda x: np.log(x) if pd.notnull(x) and x &gt; 0 else 0)\n\n# Ensure all columns are numeric (no categories)\nfor col in df_model.columns:\n    if df_model[col].dtype.name == 'category':\n        df_model[col] = df_model[col].astype(str)\n\n# Select features for modeling\nfeature_cols = [c for c in df_model.columns if c not in ['Price_USD', 'log_Price_USD']]\n\n# Keep only numeric columns for scaling\nX = df_model[feature_cols].select_dtypes(include='number').fillna(0)\n\n# Standardize numeric features \nscaler = StandardScaler()\nX_scaled = pd.DataFrame(scaler.fit_transform(X), columns=X.columns)\n\n# Target variable \ny = df_model['log_Price_USD']\n\n# Combine scaled features with target \ndf_ready = pd.concat([X_scaled, y.reset_index(drop=True)], axis=1)\n\n# Save CSV in existing data\nos.makedirs(\"data\", exist_ok=True)\noutput_path = \"data/bmw_modeling_ready_scaled.csv\"\ndf_ready.to_csv(output_path, index=False)"
+  },
+  {
+    "objectID": "all_notebook/Prentation.html#introduction",
+    "href": "all_notebook/Prentation.html#introduction",
+    "title": "BMW Car Sales Analysis & Price Prediction",
+    "section": "Introduction",
+    "text": "Introduction\n\nProject: BMW Car Sales — Data Analysis & Price Prediction\nObjectives:\n\nExplore global BMW car sales data.\nIdentify key features affecting car prices.\nBuild predictive models for price estimation."
+  },
+  {
+    "objectID": "all_notebook/Prentation.html#dataset-overview",
+    "href": "all_notebook/Prentation.html#dataset-overview",
+    "title": "BMW Car Sales Analysis & Price Prediction",
+    "section": "Dataset Overview",
+    "text": "Dataset Overview\n#| label: load-dataset #| message: false #| results: show\nimport pandas as pd\ndf = pd.read_csv(“../data/cleaned/bmw_cleaned.csv”)"
+  },
+  {
+    "objectID": "all_notebook/Prentation.html#price-by-fuel-type",
+    "href": "all_notebook/Prentation.html#price-by-fuel-type",
+    "title": "BMW Car Sales Analysis & Price Prediction",
+    "section": "Price by Fuel Type",
+    "text": "Price by Fuel Type"
+  },
+  {
+    "objectID": "all_notebook/Prentation.html#price-distribution",
+    "href": "all_notebook/Prentation.html#price-distribution",
+    "title": "BMW Car Sales Analysis & Price Prediction",
+    "section": "Price Distribution",
+    "text": "Price Distribution"
+  },
+  {
+    "objectID": "all_notebook/Prentation.html#log-price-distribution",
+    "href": "all_notebook/Prentation.html#log-price-distribution",
+    "title": "BMW Car Sales Analysis & Price Prediction",
+    "section": "Log-Price Distribution",
+    "text": "Log-Price Distribution"
+  },
+  {
+    "objectID": "all_notebook/Prentation.html#engine-size-vs-price",
+    "href": "all_notebook/Prentation.html#engine-size-vs-price",
+    "title": "BMW Car Sales Analysis & Price Prediction",
+    "section": "Engine Size vs Price",
+    "text": "Engine Size vs Price"
+  },
+  {
+    "objectID": "all_notebook/Prentation.html#top-models-by-region",
+    "href": "all_notebook/Prentation.html#top-models-by-region",
+    "title": "BMW Car Sales Analysis & Price Prediction",
+    "section": "Top Models by Region",
+    "text": "Top Models by Region"
+  },
+  {
+    "objectID": "all_notebook/Prentation.html#sales-by-color-and-region",
+    "href": "all_notebook/Prentation.html#sales-by-color-and-region",
+    "title": "BMW Car Sales Analysis & Price Prediction",
+    "section": "Sales by Color and Region",
+    "text": "Sales by Color and Region"
+  },
+  {
+    "objectID": "all_notebook/Prentation.html#price-by-categories",
+    "href": "all_notebook/Prentation.html#price-by-categories",
+    "title": "BMW Car Sales Analysis & Price Prediction",
+    "section": "Price by Categories",
+    "text": "Price by Categories"
+  },
+  {
+    "objectID": "all_notebook/Prentation.html#top-10-models-globally",
+    "href": "all_notebook/Prentation.html#top-10-models-globally",
+    "title": "BMW Car Sales Analysis & Price Prediction",
+    "section": "Top 10 Models Globally",
+    "text": "Top 10 Models Globally"
+  },
+  {
+    "objectID": "all_notebook/Prentation.html#average-price-trend-by-year",
+    "href": "all_notebook/Prentation.html#average-price-trend-by-year",
+    "title": "BMW Car Sales Analysis & Price Prediction",
+    "section": "Average Price Trend by Year",
+    "text": "Average Price Trend by Year"
+  },
+  {
+    "objectID": "all_notebook/Prentation.html#temporal-price-distribution",
+    "href": "all_notebook/Prentation.html#temporal-price-distribution",
+    "title": "BMW Car Sales Analysis & Price Prediction",
+    "section": "Temporal Price Distribution",
+    "text": "Temporal Price Distribution"
+  },
+  {
+    "objectID": "all_notebook/Prentation.html#correlation-matrix",
+    "href": "all_notebook/Prentation.html#correlation-matrix",
+    "title": "BMW Car Sales Analysis & Price Prediction",
+    "section": "Correlation Matrix",
+    "text": "Correlation Matrix"
+  },
+  {
+    "objectID": "all_notebook/Prentation.html#pairwise-relationships",
+    "href": "all_notebook/Prentation.html#pairwise-relationships",
+    "title": "BMW Car Sales Analysis & Price Prediction",
+    "section": "Pairwise Relationships",
+    "text": "Pairwise Relationships"
+  },
+  {
+    "objectID": "all_notebook/Prentation.html#feature-importance",
+    "href": "all_notebook/Prentation.html#feature-importance",
+    "title": "BMW Car Sales Analysis & Price Prediction",
+    "section": "Feature Importance",
+    "text": "Feature Importance"
+  },
+  {
+    "objectID": "all_notebook/Prentation.html#predicted-vs-actual-prices-temporal-split",
+    "href": "all_notebook/Prentation.html#predicted-vs-actual-prices-temporal-split",
+    "title": "BMW Car Sales Analysis & Price Prediction",
+    "section": "Predicted vs Actual Prices (Temporal Split)",
+    "text": "Predicted vs Actual Prices (Temporal Split)"
+  },
+  {
+    "objectID": "all_notebook/Prentation.html#dataset",
+    "href": "all_notebook/Prentation.html#dataset",
+    "title": "BMW Car Sales Analysis & Price Prediction",
+    "section": "Dataset",
+    "text": "Dataset\n\n\nRows: 50000 | Columns: 17\n\n\n\n\n\n\n\n\n\nModel\nYear\nRegion\nColor\nFuel_Type\nTransmission\nEngine_Size_L\nMileage_KM\nPrice_USD\nSales_Volume\nSales_Classification\nCar_Age\nLog_Price_USD\nPrice_per_KM\nEngine_Bin\nAge_Bin\nTotal_Sales_Model\n\n\n\n\n0\n5 Series\n2016\nAsia\nRed\nPetrol\nManual\n3.5\n151748\n98740\n8300\nHigh\n9\n11.500256\n0.650684\n3.1-4.0\n7-10\n23097519\n\n\n1\nI8\n2013\nNorth America\nRed\nHybrid\nAutomatic\n1.6\n121671\n79219\n3428\nLow\n12\n11.279984\n0.651092\n&lt;=1.6\n10+\n23423891\n\n\n2\n5 Series\n2022\nNorth America\nBlue\nPetrol\nAutomatic\n4.5\n10991\n113265\n6994\nLow\n3\n11.637494\n10.305250\n&gt;4.0\n2-3\n23097519\n\n\n3\nX3\n2024\nMiddle East\nBlue\nPetrol\nAutomatic\n1.7\n27255\n60971\n4047\nLow\n1\n11.018170\n2.237057\n1.7-2.0\n0-1\n22745529\n\n\n4\n7 Series\n2020\nSouth America\nBlack\nDiesel\nManual\n2.1\n122131\n49898\n3080\nLow\n5\n10.817756\n0.408561\n2.1-3.0\n4-6\n23786466"
+  },
+  {
+    "objectID": "Prentation_draft.html#introduction",
+    "href": "Prentation_draft.html#introduction",
+    "title": "BMW Car Sales Analysis & Price Prediction",
+    "section": "Introduction",
+    "text": "Introduction\n\nProject: BMW Car Sales — Data Analysis & Price Prediction\nObjectives:\n\nExplore global BMW car sales data.\nIdentify key features affecting car prices.\nBuild predictive models for price estimation."
+  },
+  {
+    "objectID": "Prentation_draft.html#dataset",
+    "href": "Prentation_draft.html#dataset",
+    "title": "BMW Car Sales Analysis & Price Prediction",
+    "section": "Dataset",
+    "text": "Dataset\n\n\nRows: 50000 | Columns: 17\n\n\n\n\n\n\n\n\n\nModel\nYear\nRegion\nColor\nFuel_Type\nTransmission\nEngine_Size_L\nMileage_KM\nPrice_USD\nSales_Volume\nSales_Classification\nCar_Age\nLog_Price_USD\nPrice_per_KM\nEngine_Bin\nAge_Bin\nTotal_Sales_Model\n\n\n\n\n0\n5 Series\n2016\nAsia\nRed\nPetrol\nManual\n3.5\n151748\n98740\n8300\nHigh\n9\n11.500256\n0.650684\n3.1-4.0\n7-10\n23097519\n\n\n1\nI8\n2013\nNorth America\nRed\nHybrid\nAutomatic\n1.6\n121671\n79219\n3428\nLow\n12\n11.279984\n0.651092\n&lt;=1.6\n10+\n23423891\n\n\n2\n5 Series\n2022\nNorth America\nBlue\nPetrol\nAutomatic\n4.5\n10991\n113265\n6994\nLow\n3\n11.637494\n10.305250\n&gt;4.0\n2-3\n23097519\n\n\n3\nX3\n2024\nMiddle East\nBlue\nPetrol\nAutomatic\n1.7\n27255\n60971\n4047\nLow\n1\n11.018170\n2.237057\n1.7-2.0\n0-1\n22745529\n\n\n4\n7 Series\n2020\nSouth America\nBlack\nDiesel\nManual\n2.1\n122131\n49898\n3080\nLow\n5\n10.817756\n0.408561\n2.1-3.0\n4-6\n23786466"
+  },
+  {
+    "objectID": "Prentation_draft.html#price-distribution",
+    "href": "Prentation_draft.html#price-distribution",
+    "title": "BMW Car Sales Analysis & Price Prediction",
+    "section": "Price Distribution",
+    "text": "Price Distribution"
+  },
+  {
+    "objectID": "Prentation_draft.html#log-price-distribution",
+    "href": "Prentation_draft.html#log-price-distribution",
+    "title": "BMW Car Sales Analysis & Price Prediction",
+    "section": "Log-Price Distribution",
+    "text": "Log-Price Distribution"
+  },
+  {
+    "objectID": "Prentation_draft.html#price-by-fuel-type",
+    "href": "Prentation_draft.html#price-by-fuel-type",
+    "title": "BMW Car Sales Analysis & Price Prediction",
+    "section": "Price by Fuel Type",
+    "text": "Price by Fuel Type"
+  },
+  {
+    "objectID": "Prentation_draft.html#engine-size-vs-price",
+    "href": "Prentation_draft.html#engine-size-vs-price",
+    "title": "BMW Car Sales Analysis & Price Prediction",
+    "section": "Engine Size vs Price",
+    "text": "Engine Size vs Price"
+  },
+  {
+    "objectID": "Prentation_draft.html#top-models-by-region",
+    "href": "Prentation_draft.html#top-models-by-region",
+    "title": "BMW Car Sales Analysis & Price Prediction",
+    "section": "Top Models by Region",
+    "text": "Top Models by Region"
+  },
+  {
+    "objectID": "Prentation_draft.html#sales-by-color-and-region",
+    "href": "Prentation_draft.html#sales-by-color-and-region",
+    "title": "BMW Car Sales Analysis & Price Prediction",
+    "section": "Sales by Color and Region",
+    "text": "Sales by Color and Region"
+  },
+  {
+    "objectID": "Prentation_draft.html#price-by-categories",
+    "href": "Prentation_draft.html#price-by-categories",
+    "title": "BMW Car Sales Analysis & Price Prediction",
+    "section": "Price by Categories",
+    "text": "Price by Categories"
+  },
+  {
+    "objectID": "Prentation_draft.html#top-10-models-globally",
+    "href": "Prentation_draft.html#top-10-models-globally",
+    "title": "BMW Car Sales Analysis & Price Prediction",
+    "section": "Top 10 Models Globally",
+    "text": "Top 10 Models Globally"
+  },
+  {
+    "objectID": "Prentation_draft.html#average-price-trend-by-year",
+    "href": "Prentation_draft.html#average-price-trend-by-year",
+    "title": "BMW Car Sales Analysis & Price Prediction",
+    "section": "Average Price Trend by Year",
+    "text": "Average Price Trend by Year"
+  },
+  {
+    "objectID": "Prentation_draft.html#temporal-price-distribution",
+    "href": "Prentation_draft.html#temporal-price-distribution",
+    "title": "BMW Car Sales Analysis & Price Prediction",
+    "section": "Temporal Price Distribution",
+    "text": "Temporal Price Distribution"
+  },
+  {
+    "objectID": "Prentation_draft.html#correlation-matrix",
+    "href": "Prentation_draft.html#correlation-matrix",
+    "title": "BMW Car Sales Analysis & Price Prediction",
+    "section": "Correlation Matrix",
+    "text": "Correlation Matrix"
+  },
+  {
+    "objectID": "Prentation_draft.html#pairwise-relationships",
+    "href": "Prentation_draft.html#pairwise-relationships",
+    "title": "BMW Car Sales Analysis & Price Prediction",
+    "section": "Pairwise Relationships",
+    "text": "Pairwise Relationships"
+  },
+  {
+    "objectID": "Prentation_draft.html#feature-importance",
+    "href": "Prentation_draft.html#feature-importance",
+    "title": "BMW Car Sales Analysis & Price Prediction",
+    "section": "Feature Importance",
+    "text": "Feature Importance"
+  },
+  {
+    "objectID": "Prentation_draft.html#predicted-vs-actual-prices-temporal-split",
+    "href": "Prentation_draft.html#predicted-vs-actual-prices-temporal-split",
+    "title": "BMW Car Sales Analysis & Price Prediction",
+    "section": "Predicted vs Actual Prices (Temporal Split)",
+    "text": "Predicted vs Actual Prices (Temporal Split)"
   }
 ]
