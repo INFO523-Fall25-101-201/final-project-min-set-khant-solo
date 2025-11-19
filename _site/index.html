@@ -6,10 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Team name - Team member 1, Team member 2,…">
-<meta name="description" content="Project description">
+<meta name="author" content="Min Set Khant">
+<meta name="description" content="Analyze, visualize, and predict BMW car prices using multi-regional sales data from 2010–2024, exploring how features such as model, region, engine size, and transmission influence market value and sales performance.">
 
-<title>Project Title</title>
+<title>BMW Car Price Analysis &amp; Prediction – BMW Car Sales Analysis</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -4043,7 +4043,7 @@ vertical-align: -.125em;
     <a href="./index.html" class="navbar-brand navbar-brand-logo">
     </a>
     <a class="navbar-brand" href="./index.html">
-    <span class="navbar-title">Project Title</span>
+    <span class="navbar-title">BMW Car Sales Analysis</span>
     </a>
   </div>
             <div id="quarto-search" class title="Search"></div>
@@ -4061,7 +4061,7 @@ vertical-align: -.125em;
 <span class="menu-text">Proposal</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./presentation.html"> 
+    <a class="nav-link" href="./Final_Presentation.html"> 
 <span class="menu-text">Presentation</span></a>
   </li>  
   <li class="nav-item">
@@ -4071,7 +4071,7 @@ vertical-align: -.125em;
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item compact">
-    <a class="nav-link" href="https://github.com/INFO-523-SU24/final-project"> <i class="bi bi-github" role="img">
+    <a class="nav-link" href="https://github.com/INFO523-Fall25-101-201/final-project-min-set-khant-solo.git"> <i class="bi bi-github" role="img">
 </i> 
 <span class="menu-text"></span></a>
   </li>  
@@ -4102,13 +4102,13 @@ vertical-align: -.125em;
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<div class="quarto-title-block"><div><h1 class="title">Project Title</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
-<p class="subtitle lead">INFO 523 - Final Project</p>
+<div class="quarto-title-block"><div><h1 class="title">BMW Car Price Analysis &amp; Prediction</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
+<p class="subtitle lead">INFO 523 - Final Project - Temporal Validation of Market Value</p>
 </div>
 
 <div>
   <div class="description">
-    Project description
+    Analyze, visualize, and predict BMW car prices using multi-regional sales data from 2010–2024, exploring how features such as model, region, engine size, and transmission influence market value and sales performance.
   </div>
 </div>
 
@@ -4117,7 +4117,7 @@ vertical-align: -.125em;
   <div class="quarto-title-meta-heading">Affiliation</div>
   
     <div class="quarto-title-meta-contents">
-    <p class="author">Team name - Team member 1, Team member 2,… </p>
+    <p class="author">Min Set Khant </p>
   </div>
   <div class="quarto-title-meta-contents">
         <p class="affiliation">
@@ -4140,7 +4140,7 @@ vertical-align: -.125em;
 
 <section id="abstract" class="level2">
 <h2 class="anchored" data-anchor-id="abstract">Abstract</h2>
-<p>Add project abstract here.</p>
+<p>This project focuses on analyzing worldwide BMW car sales data from 2010 to 2024 to understand the complex factors that determine a vehicle’s market value. We conduct extensive Exploratory Data Analysis (EDA) to identify key price drivers, including mileage, engine size, car age, and regional sales trends. The core of the project involves building a robust machine learning model (Random Forest Regressor) to accurately predict car prices. Crucially, the model’s performance is validated using a temporal train-test split, simulating a real-world scenario where the model predicts 2024 prices based on data up to 2023. The final model achieves a strong temporal stability with a Mean Absolute Error (MAE) of approximately $531.13, providing high-confidence insights for pricing and inventory optimization strategies.</p>
 
 
 <!-- -->
@@ -4613,13 +4613,13 @@ vertical-align: -.125em;
   });
   </script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> &quot;Project Title&quot;</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="an">subtitle:</span><span class="co"> &quot;INFO 523 - Final Project&quot;</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> &quot;BMW Car Price Analysis &amp; Prediction&quot;</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="an">subtitle:</span><span class="co"> &quot;INFO 523 - Final Project - Temporal Validation of Market Value&quot;</span></span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="an">author:</span><span class="co"> </span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co">  - name: &quot;Team name - Team member 1, Team member 2,...&quot;</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co">  - name: &quot;Min Set Khant&quot;</span></span>
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co">    affiliations:</span></span>
 <span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co">      - name: &quot;College of Information Science, University of Arizona&quot;</span></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="an">description:</span><span class="co"> &quot;Project description&quot;</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="an">description:</span><span class="co"> &quot;Analyze, visualize, and predict BMW car prices using multi-regional sales data from 2010–2024, exploring how features such as model, region, engine size, and transmission influence market value and sales performance.&quot;</span></span>
 <span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span></span>
 <span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="co">   html:</span></span>
 <span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="co">    code-tools: true</span></span>
@@ -4634,7 +4634,7 @@ vertical-align: -.125em;
 <span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a><span class="fu">## Abstract</span></span>
 <span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>Add project abstract here.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal><i class="bi"></i></button></div>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>This project focuses on analyzing worldwide BMW car sales data from 2010 to 2024 to understand the complex factors that determine a vehicle&#39;s market value. We conduct extensive Exploratory Data Analysis (EDA) to identify key price drivers, including mileage, engine size, car age, and regional sales trends. The core of the project involves building a robust machine learning model (Random Forest Regressor) to accurately predict car prices. Crucially, the model&#39;s performance is validated using a temporal train-test split, simulating a real-world scenario where the model predicts 2024 prices based on data up to 2023. The final model achieves a strong temporal stability with a Mean Absolute Error (MAE) of approximately $531.13, providing high-confidence insights for pricing and inventory optimization strategies.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal><i class="bi"></i></button></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 

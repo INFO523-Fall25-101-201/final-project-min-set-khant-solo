@@ -6,14 +6,14 @@ website:
   navbar:
     right:
       - icon: github
-        href: https://github.com/INFO523-Fall25-101-201/final-project-min-set-khant-solo.git # Need to change to your project repo
+        href: https://github.com/INFO523-Fall25-101-201/final-project-min-set-khant-solo
     left:
       - text: Project
         href: index.qmd
       - text: Proposal
         href: proposal.qmd
       - text: Presentation
-        href: Final_Presentation.qmd 
+        href: Final_Presentation.qmd
       - text: About
         href: about.qmd
 
@@ -23,6 +23,3 @@ format:
       light: flatly
       dark: darkly
     toc: true
-
-execute:
-  freeze: auto
