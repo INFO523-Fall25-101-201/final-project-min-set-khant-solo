@@ -1,5 +1,5 @@
 ---
-title: "BMW Car Price Analysis & Prediction""
+title: "BMW Car Price Analysis & Prediction"
 subtitle: "INFO 523 - Final Project - Temporal Validation of Market Value"
 author: 
   - name: "Min Set Khant"
