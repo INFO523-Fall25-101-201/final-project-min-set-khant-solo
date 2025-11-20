@@ -67,6 +67,17 @@ data.head(10)
 
 Detail: The analysis utilized over **50,000 records** of multi-regional sales. Regional features were processed using **One-Hot Encoding** to prevent models from assigning arbitrary ordinal relationships to categories.
 
+## Global Market Demand 
+
+### Global Market Demand: Top 10 Models
+
+| Volume by Model (2010–2024) |
+|------------------------------------------------------------------------|
+| ![](visuals/top10_models_global.png) |
+| Insight:Globally, sales volume is often dominated by \*\*core sedan and SUV series\*\* (e.g., 3-Series, 5-Series, X3, X5), reflecting high overall market liquidity.
+Impact:Models with high global volume typically exhibit more \*\*stable pricing\*\* due to consistent demand, which reduces prediction volatility.
+EDA Detail:This volume data was analyzed \*before\* the temporal split to understand the underlying market foundation across all years. |
+
 ## EDA: Correlation Analysis
 
 ### Price Relationships
@@ -93,7 +104,7 @@ Detail: Two key features were engineered for this analysis: **Car Age** (calcula
 ### Model Accuracy (Reporting in USD)
 
 | Metric | Value | Interpretation |
-|:----------------------:|:----------------------:|:----------------------:|
+|:----------------------:|:---------------------:|:-----------------------:|
 | **R-squared (Log Price)** | **0.9952** | Variance explained by the model on the transformed price. |
 | **Root Mean Squared Error (RMSE)** | **\$2,292.13** | Average prediction error, penalizing large errors. |
 | **Mean Absolute Error (MAE)** | **\$531.13** | **Most Interpretable:** On average, the model's price prediction is off by this amount in USD. |
@@ -114,9 +125,9 @@ The Random Forest model identified these key drivers based on **Gini Impurity Re
 
 ------------------------------------------------------------------------
 
-|          Full Feature Importance          |
-|:-----------------------------------------:|
-| ![](../visuals/rf_feature_importance.png) |
+|        Full Feature Importance         |
+|:--------------------------------------:|
+| ![](visuals/rf_feature_importance.png) |
 
 *Technical Detail:* The model was chosen for its ability to calculate **Feature Importance** via Mean Decrease in Impurity (Gini). The trained model was serialized and saved as `rf_best_model.joblib` for future deployment.
 

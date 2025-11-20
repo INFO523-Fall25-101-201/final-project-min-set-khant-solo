@@ -372,6 +372,29 @@ Min Set Khant (Solo)
 </table>
 <p>Detail: The analysis utilized over <strong>50,000 records</strong> of multi-regional sales. Regional features were processed using <strong>One-Hot Encoding</strong> to prevent models from assigning arbitrary ordinal relationships to categories.</p>
 </section>
+<section id="global-market-demand" class="slide level2">
+<h2>Global Market Demand</h2>
+<h3 id="global-market-demand-top-10-models">Global Market Demand: Top 10 Models</h3>
+<table class="caption-top">
+<colgroup>
+<col style="width: 100%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Volume by Model (2010–2024)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><img data-src="visuals/top10_models_global.png"></td>
+</tr>
+<tr class="even">
+<td>Insight:Globally, sales volume is often dominated by **core sedan and SUV series** (e.g., 3-Series, 5-Series, X3, X5), reflecting high overall market liquidity.</td>
+</tr>
+</tbody>
+</table>
+<p>Impact:Models with high global volume typically exhibit more **stable pricing** due to consistent demand, which reduces prediction volatility. EDA Detail:This volume data was analyzed *before* the temporal split to understand the underlying market foundation across all years. |</p>
+</section>
 <section id="eda-correlation-analysis" class="slide level2">
 <h2>EDA: Correlation Analysis</h2>
 <h3 id="price-relationships">Price Relationships</h3>
@@ -415,11 +438,11 @@ Min Set Khant (Solo)
 <section id="random-forest-performance" class="slide level2">
 <h2>Random Forest Performance</h2>
 <h3 id="model-accuracy-reporting-in-usd">Model Accuracy (Reporting in USD)</h3>
-<table class="caption-top">
+<table class="caption-top" style="width:100%;">
 <colgroup>
 <col style="width: 33%">
-<col style="width: 33%">
-<col style="width: 33%">
+<col style="width: 31%">
+<col style="width: 34%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -470,7 +493,7 @@ Min Set Khant (Solo)
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: center;"><img data-src="../visuals/rf_feature_importance.png"></td>
+<td style="text-align: center;"><img data-src="visuals/rf_feature_importance.png"></td>
 </tr>
 </tbody>
 </table>

@@ -509,5 +509,19 @@
     "title": "BMW Car Sales Analysis & Price Prediction",
     "section": "Conclusion: Summary of Findings",
     "text": "Conclusion: Summary of Findings\nAnswering the Key Questions\n\nTop Drivers: Price is overwhelmingly driven by Price per KM and Mileage (KM).\nModel Success: The Random Forest model demonstrates strong temporal validation, accurately predicting 2024 market prices with an MAE of $531.13.\nMarket Insight: Model popularity and sales volume are highly specific to Region."
+  },
+  {
+    "objectID": "Final_Presentation.html#market-segmentation-top-models-by-region",
+    "href": "Final_Presentation.html#market-segmentation-top-models-by-region",
+    "title": "BMW Car Sales Analysis & Price Prediction",
+    "section": "Market Segmentation: Top Models by Region",
+    "text": "Market Segmentation: Top Models by Region\nThe Role of Geography in Demand\n\n\n\n\n\n\nTop Models by Regional Sales Volume\n\n\n\n\n\n\n\nInsight: Model popularity and sales volume are **highly specific to region** (e.g., the preferred model in Europe differs from Asia or North America).\n\n\n\nImpact: This non-uniform distribution confirms that the **Region** variable is a critical predictor for price and inventory strategy. Detail: Regional features were processed using **One-Hot Encoding** to prevent models from assigning arbitrary ordinal relationships to these categories. |"
+  },
+  {
+    "objectID": "Final_Presentation.html#global-market-demand",
+    "href": "Final_Presentation.html#global-market-demand",
+    "title": "BMW Car Sales Analysis & Price Prediction",
+    "section": "Global Market Demand",
+    "text": "Global Market Demand\nGlobal Market Demand: Top 10 Models\n\n\n\n\n\n\nVolume by Model (2010–2024)\n\n\n\n\n\n\n\nInsight:Globally, sales volume is often dominated by **core sedan and SUV series** (e.g., 3-Series, 5-Series, X3, X5), reflecting high overall market liquidity.\n\n\n\nImpact:Models with high global volume typically exhibit more **stable pricing** due to consistent demand, which reduces prediction volatility. EDA Detail:This volume data was analyzed *before* the temporal split to understand the underlying market foundation across all years. |"
   }
 ]
