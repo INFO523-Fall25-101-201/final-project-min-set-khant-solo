@@ -2,18 +2,23 @@
 title: "BMW Car Sales Analysis & Price Prediction"
 subtitle: "Temporal Validation of Market Value"
 author: "Min Set Khant (Solo)"
-date: "2025-12-08"
-format: 
+title-slide-attributes:
+  data-background-image: images/watercolour_sys02_img34_teacup-ocean.jpg
+  data-background-size: stretch
+  data-background-opacity: "0.7"
+  data-slide-number: none
+format:
   revealjs:
-    theme: simple      
-    css: bmw-style.css  
-    slide-number: true
-    transition: fade
-    center: true
+    theme:  ['data/customtheming.scss']
+    slide-number: true     
+    transition: slide      
+    center: false        
+    footer: "INFO-523 | BMW Price Prediction" 
+  
+editor: visual
+jupyter: python3
 execute:
   echo: false
-  freeze: auto
-  python: true
 ---
 ## Introduction
 ### Project: BMW Car Sales — Data Analysis & Price Prediction
@@ -31,7 +36,7 @@ execute:
 - **Status:** Data has been cleaned, imputed, and One-Hot Encoded.
 - **Target Variable:** `Price_USD` (Log-transformed for modeling).
 
-```{python}
+```{python,data-v-align="top"}
 #| label: load-pkgs
 #| message: false
 import numpy as np
@@ -40,25 +45,14 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 from pathlib import Path
 import os
-
-#| label: load-dataset
-#| message: false
 from pathlib import Path
 import pandas as pd
-
-# Your data path
-data_path = os.path.join("data", "cleaned", "bmw_cleaned.csv")
-df = pd.read_csv(data_path)
-print("Rows:", df.shape[0], "| Columns:", df.shape[1])
-df.head(5)
+#| label: load-dataset
+#| message: false
+data = pd.read_csv("data/bmw_worldwide_sales.csv")
+data.head(10)
 ```
-## EDA: Price Distribution
-### Transformation for Modeling
 
-| Raw Price Distribution | Transformed Price Distribution |
-|:---:|:---:|
-| ![](../visuals/price_distribution.png) | ![](../visuals/log_price_distribution.png) |
-| *Observation: The raw price data is highly skewed, justifying the need for **Log Transformation** to normalize the target for linear models.* | *Result: The log-transformed price is much closer to a normal distribution.* |
 
 ## EDA: Market Trends & Segmentation
 ### Regional Performance and Trends
@@ -66,15 +60,8 @@ df.head(5)
 | Sales Trend Over Time | Top Models by Regional Sales Volume |
 |:---:|:---:|
 | ![](../visuals/avg_price_by_year.png) | ![](../visuals/top_model_per_region.png) |
-| *Observation: The average price has a clear upward trend, validating the need for **Temporal Validation**.* | *Observation: Model popularity varies significantly by region (e.g., specific models dominate in Europe vs. Asia).* |
-
-## EDA: Market Trends & Segmentation
-### Regional Performance and Trends
-
-| Sales Trend Over Time | Top Models by Regional Sales Volume |
-|:---:|:---:|
-| ![](../visuals/avg_price_by_year.png) | ![](../visuals/top_model_per_region.png) |
-| *Observation: The average price has a clear upward trend, validating the need for **Temporal Validation**.* | *Observation: Model popularity varies significantly by region (e.g., specific models dominate in Europe vs. Asia).* |
+| *Observation: The average price shows a **clear, non-linear upward trend** over time, suggesting market inflation. This justifies the **Temporal Validation** strategy.* | *Observation: Model popularity is **highly segmented by region**. This confirms that the **Region** variable is a critical feature for effective price segmentation.* |
+Detail: The analysis utilized over **50,000 records** of multi-regional sales. Regional features were processed using **One-Hot Encoding** to prevent models from assigning arbitrary ordinal relationships to categories.
 
 ## EDA: Correlation Analysis
 ### Price Relationships
@@ -82,7 +69,8 @@ df.head(5)
 | Correlation Matrix | Price Distribution by Fuel Type |
 |:---:|:---:|
 | ![](../visuals/correlation_matrix.png) | ![](../visuals/price_by_fueltype_box.png) |
-| *Observation: The log-price is strongly correlated with **Engine Size** and **Car Age** (negative correlation).* | *Observation: Price distributions differ across fuel types, suggesting fuel choice is a price segmentation feature.* |
+| *Observation: Log-Price shows a strong **inverse linear relationship** with **Car Age** (depreciation) and a strong **positive correlation** with **Engine Size** (performance/class).* | *Observation: Significant differences in the **median price** across fuel types confirm this categorical feature has **strong predictive power** and is not independent of the target.* |
+Detail: Two key features were engineered for this analysis: **Car Age** (calculated as `Current_Year - Model_Year`) and **Price per KM** (calculated as `Price_USD / Mileage_KM`), both showing significant predictive value.
 
 ## Modeling Approach
 ### Temporal Validation Strategy
@@ -104,32 +92,37 @@ df.head(5)
 
 *Interpretation: The model successfully predicted 2024 prices with an average absolute error of approximately **$531.13**, proving its temporal stability.*
 
-## Key Price Drivers
-### Feature Importance Analysis
+## Key Price Drivers: Feature Importance
+### Top 5 Predictors of BMW Price
 
-- **Model Insight**:  We use the Random Forest's Gini Importance to rank the features. The feature importance graph below illustrates these findings.
+The Random Forest model identified these key drivers based on **Gini Impurity Reduction**:
 
-![](../visuals/rf_feature_importance.png)
+1.  **Price per KM** (**0.682**) - *Represents the calculated efficiency/condition ratio; its dominance suggests it captures the **residual value** most effectively.*
+2.  **Mileage (KM)** (**0.318**) - *Primary measure of vehicle use and wear, directly driving the rate of depreciation.*
+3.  **Engine Size (L)** (0.000018)
+4.  **Car Age** (0.000015)
+5.  **Transmission: Manual** (0.000004)
 
-#### Top 5 Predictors of BMW Price:
-1. **Price per KM** (0.682) - *The single greatest indicator of price.*
-2. **Mileage (KM)** (0.318) - *Indicates vehicle wear and depreciation.*
-3. **Engine Size (L)** (0.000018)
-4. **Car Age** (0.000015)
-5. **Transmission: Manual** (0.000004)
+---
+| Full Feature Importance |
+|:---:|
+| ![](../visuals/rf_feature_importance.png) |
 
-## Conclusion and Recommendations
-### Summary of Findings
+*Technical Detail:* The model was chosen for its ability to calculate **Feature Importance** via Mean Decrease in Impurity (Gini). The trained model was serialized and saved as `rf_best_model.joblib` for future deployment.
 
-- **Top Drivers:** Price is overwhelmingly driven by the **Price per KM** and **Mileage (KM)**, suggesting depreciation rates and total distance traveled are the primary variables used by the market.
-- **Model Success:** The Random Forest model demonstrates **strong temporal validation**, accurately predicting 2024 market prices with a mean absolute error of **$531.13**.
-- **Key Market Insight:** Model popularity and sales volume are highly specific to **Region**, suggesting localized strategies are essential.
+## Conclusion: Summary of Findings
+### Answering the Key Questions
 
-### Business Recommendations
+* **Top Drivers:** Price is overwhelmingly driven by **Price per KM** and **Mileage (KM)**.
+* **Model Success:** The Random Forest model demonstrates **strong temporal validation**, accurately predicting 2024 market prices with an MAE of **$531.13**.
+* **Market Insight:** Model popularity and sales volume are highly specific to **Region**.  
 
-1. **Pricing Strategy:** Use the model's feature importance to set pricing guidelines. The low MAE ($531.13) provides high confidence for automated pricing models.
-2. **Inventory Optimization:** Focus inventory based on the regional popularity derived from the EDA.
-3. **Future Validation:** Re-run the temporal validation annually to ensure the model's stability.
+## Business Recommendations
+### Actionable Insights for Strategy
+
+1.  **Pricing Strategy:** Use the model's feature importance to set pricing guidelines. The low MAE ($531.13) provides high confidence for automated pricing models.
+2.  **Inventory Optimization:** Focus inventory based on the regional popularity derived from the EDA.
+3.  **Future Validation:** Re-run the temporal validation annually to ensure the model's stability and adapt to market shifts.
 
 ## Thank You
 ### INFO-523 Final Project

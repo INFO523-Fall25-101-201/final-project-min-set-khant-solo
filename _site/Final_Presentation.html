@@ -10,7 +10,6 @@
   <meta name="generator" content="quarto-1.8.25">
 
   <meta name="author" content="Min Set Khant (Solo)">
-  <meta name="dcterms.date" content="2025-12-08">
   <title>BMW Car Sales Analysis – BMW Car Sales Analysis &amp; Price Prediction</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -30,8 +29,7 @@
       vertical-align: middle;
     }
   </style>
-  <link rel="stylesheet" href="site_libs/revealjs/dist/theme/quarto-0fde88a82f0356838740f155f1088782.css">
-  <link rel="stylesheet" href="bmw-style.css">
+  <link rel="stylesheet" href="site_libs/revealjs/dist/theme/quarto-3284f4d69c379a59dc58037f95ed6c56.css">
   <link href="site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -131,7 +129,7 @@
   <div class="reveal">
     <div class="slides">
 
-<section id="title-slide" class="quarto-title-block center">
+<section id="title-slide" data-background-image="images/watercolour_sys02_img34_teacup-ocean.jpg" data-background-opacity="0.7" data-background-size="stretch" data-slide-number="none" class="quarto-title-block center">
   <h1 class="title">BMW Car Sales Analysis &amp; Price Prediction</h1>
   <p class="subtitle">Temporal Validation of Market Value</p>
 
@@ -143,9 +141,8 @@ Min Set Khant (Solo)
 </div>
 </div>
 
-  <p class="date">2025-12-08</p>
 </section>
-<section id="introduction" class="slide level2 center">
+<section id="introduction" class="slide level2">
 <h2>Introduction</h2>
 <h3 id="project-bmw-car-sales-data-analysis-price-prediction">Project: BMW Car Sales — Data Analysis &amp; Price Prediction</h3>
 <ul>
@@ -158,7 +155,7 @@ Min Set Khant (Solo)
 </ol></li>
 </ul>
 </section>
-<section id="data-overview-setup" class="slide level2 center">
+<section id="data-overview-setup" class="slide level2">
 <h2>Data Overview &amp; Setup</h2>
 <h3 id="dataset-bmw-worldwide-sales-20102024">Dataset: BMW Worldwide Sales (2010–2024)</h3>
 <ul>
@@ -167,9 +164,6 @@ Min Set Khant (Solo)
 <li><strong>Target Variable:</strong> <code>Price_USD</code> (Log-transformed for modeling).</li>
 </ul>
 <div id="cell-load-pkgs" class="cell" data-message="false" data-execution_count="1">
-<div class="cell-output cell-output-stdout">
-<pre><code>Rows: 50000 | Columns: 17</code></pre>
-</div>
 <div id="load-pkgs" class="cell-output cell-output-display" data-execution_count="1">
 <div>
 <style scoped="">
@@ -201,12 +195,6 @@ Min Set Khant (Solo)
 <th data-quarto-table-cell-role="th">Price_USD</th>
 <th data-quarto-table-cell-role="th">Sales_Volume</th>
 <th data-quarto-table-cell-role="th">Sales_Classification</th>
-<th data-quarto-table-cell-role="th">Car_Age</th>
-<th data-quarto-table-cell-role="th">log_Price_USD</th>
-<th data-quarto-table-cell-role="th">Price_per_KM</th>
-<th data-quarto-table-cell-role="th">Engine_Bin</th>
-<th data-quarto-table-cell-role="th">Age_Bin</th>
-<th data-quarto-table-cell-role="th">Total_Sales_Model</th>
 </tr>
 </thead>
 <tbody>
@@ -223,12 +211,6 @@ Min Set Khant (Solo)
 <td>98740</td>
 <td>8300</td>
 <td>High</td>
-<td>9</td>
-<td>11.500256</td>
-<td>0.650684</td>
-<td>3.1-4.0</td>
-<td>7-10</td>
-<td>23097519</td>
 </tr>
 <tr class="even">
 <th data-quarto-table-cell-role="th">1</th>
@@ -243,12 +225,6 @@ Min Set Khant (Solo)
 <td>79219</td>
 <td>3428</td>
 <td>Low</td>
-<td>12</td>
-<td>11.279984</td>
-<td>0.651092</td>
-<td>&lt;=1.6</td>
-<td>10+</td>
-<td>23423891</td>
 </tr>
 <tr class="odd">
 <th data-quarto-table-cell-role="th">2</th>
@@ -263,12 +239,6 @@ Min Set Khant (Solo)
 <td>113265</td>
 <td>6994</td>
 <td>Low</td>
-<td>3</td>
-<td>11.637494</td>
-<td>10.305250</td>
-<td>&gt;4.0</td>
-<td>2-3</td>
-<td>23097519</td>
 </tr>
 <tr class="even">
 <th data-quarto-table-cell-role="th">3</th>
@@ -283,12 +253,6 @@ Min Set Khant (Solo)
 <td>60971</td>
 <td>4047</td>
 <td>Low</td>
-<td>1</td>
-<td>11.018170</td>
-<td>2.237057</td>
-<td>1.7-2.0</td>
-<td>0-1</td>
-<td>22745529</td>
 </tr>
 <tr class="odd">
 <th data-quarto-table-cell-role="th">4</th>
@@ -303,12 +267,76 @@ Min Set Khant (Solo)
 <td>49898</td>
 <td>3080</td>
 <td>Low</td>
-<td>5</td>
-<td>10.817756</td>
-<td>0.408561</td>
-<td>2.1-3.0</td>
-<td>4-6</td>
-<td>23786466</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">5</th>
+<td>5 Series</td>
+<td>2017</td>
+<td>Middle East</td>
+<td>Silver</td>
+<td>Diesel</td>
+<td>Manual</td>
+<td>1.9</td>
+<td>171362</td>
+<td>42926</td>
+<td>1232</td>
+<td>Low</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">6</th>
+<td>i8</td>
+<td>2022</td>
+<td>Europe</td>
+<td>White</td>
+<td>Diesel</td>
+<td>Manual</td>
+<td>1.8</td>
+<td>196741</td>
+<td>55064</td>
+<td>7949</td>
+<td>High</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">7</th>
+<td>M5</td>
+<td>2014</td>
+<td>Asia</td>
+<td>Black</td>
+<td>Diesel</td>
+<td>Automatic</td>
+<td>1.6</td>
+<td>121156</td>
+<td>102778</td>
+<td>632</td>
+<td>Low</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">8</th>
+<td>X3</td>
+<td>2016</td>
+<td>South America</td>
+<td>White</td>
+<td>Diesel</td>
+<td>Automatic</td>
+<td>1.7</td>
+<td>48073</td>
+<td>116482</td>
+<td>8944</td>
+<td>High</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">9</th>
+<td>i8</td>
+<td>2019</td>
+<td>Europe</td>
+<td>White</td>
+<td>Electric</td>
+<td>Manual</td>
+<td>3.0</td>
+<td>35700</td>
+<td>96257</td>
+<td>4411</td>
+<td>Low</td>
 </tr>
 </tbody>
 </table>
@@ -317,33 +345,7 @@ Min Set Khant (Solo)
 </div>
 </div>
 </section>
-<section id="eda-price-distribution" class="slide level2 center">
-<h2>EDA: Price Distribution</h2>
-<h3 id="transformation-for-modeling">Transformation for Modeling</h3>
-<table class="caption-top">
-<colgroup>
-<col style="width: 50%">
-<col style="width: 50%">
-</colgroup>
-<thead>
-<tr class="header">
-<th style="text-align: center;">Raw Price Distribution</th>
-<th style="text-align: center;">Transformed Price Distribution</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: center;"><img data-src="../visuals/price_distribution.png"></td>
-<td style="text-align: center;"><img data-src="../visuals/log_price_distribution.png"></td>
-</tr>
-<tr class="even">
-<td style="text-align: center;"><em>Observation: The raw price data is highly skewed, justifying the need for <strong>Log Transformation</strong> to normalize the target for linear models.</em></td>
-<td style="text-align: center;"><em>Result: The log-transformed price is much closer to a normal distribution.</em></td>
-</tr>
-</tbody>
-</table>
-</section>
-<section id="eda-market-trends-segmentation" class="slide level2 center">
+<section id="eda-market-trends-segmentation" class="slide level2">
 <h2>EDA: Market Trends &amp; Segmentation</h2>
 <h3 id="regional-performance-and-trends">Regional Performance and Trends</h3>
 <table class="caption-top">
@@ -363,39 +365,14 @@ Min Set Khant (Solo)
 <td style="text-align: center;"><img data-src="../visuals/top_model_per_region.png"></td>
 </tr>
 <tr class="even">
-<td style="text-align: center;"><em>Observation: The average price has a clear upward trend, validating the need for <strong>Temporal Validation</strong>.</em></td>
-<td style="text-align: center;"><em>Observation: Model popularity varies significantly by region (e.g., specific models dominate in Europe vs.&nbsp;Asia).</em></td>
+<td style="text-align: center;"><em>Observation: The average price shows a <strong>clear, non-linear upward trend</strong> over time, suggesting market inflation. This justifies the <strong>Temporal Validation</strong> strategy.</em></td>
+<td style="text-align: center;"><em>Observation: Model popularity is <strong>highly segmented by region</strong>. This confirms that the <strong>Region</strong> variable is a critical feature for effective price segmentation.</em></td>
 </tr>
 </tbody>
 </table>
+<p>Detail: The analysis utilized over <strong>50,000 records</strong> of multi-regional sales. Regional features were processed using <strong>One-Hot Encoding</strong> to prevent models from assigning arbitrary ordinal relationships to categories.</p>
 </section>
-<section id="eda-market-trends-segmentation-1" class="slide level2 center">
-<h2>EDA: Market Trends &amp; Segmentation</h2>
-<h3 id="regional-performance-and-trends-1">Regional Performance and Trends</h3>
-<table class="caption-top">
-<colgroup>
-<col style="width: 50%">
-<col style="width: 50%">
-</colgroup>
-<thead>
-<tr class="header">
-<th style="text-align: center;">Sales Trend Over Time</th>
-<th style="text-align: center;">Top Models by Regional Sales Volume</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: center;"><img data-src="../visuals/avg_price_by_year.png"></td>
-<td style="text-align: center;"><img data-src="../visuals/top_model_per_region.png"></td>
-</tr>
-<tr class="even">
-<td style="text-align: center;"><em>Observation: The average price has a clear upward trend, validating the need for <strong>Temporal Validation</strong>.</em></td>
-<td style="text-align: center;"><em>Observation: Model popularity varies significantly by region (e.g., specific models dominate in Europe vs.&nbsp;Asia).</em></td>
-</tr>
-</tbody>
-</table>
-</section>
-<section id="eda-correlation-analysis" class="slide level2 center">
+<section id="eda-correlation-analysis" class="slide level2">
 <h2>EDA: Correlation Analysis</h2>
 <h3 id="price-relationships">Price Relationships</h3>
 <table class="caption-top">
@@ -415,13 +392,14 @@ Min Set Khant (Solo)
 <td style="text-align: center;"><img data-src="../visuals/price_by_fueltype_box.png"></td>
 </tr>
 <tr class="even">
-<td style="text-align: center;"><em>Observation: The log-price is strongly correlated with <strong>Engine Size</strong> and <strong>Car Age</strong> (negative correlation).</em></td>
-<td style="text-align: center;"><em>Observation: Price distributions differ across fuel types, suggesting fuel choice is a price segmentation feature.</em></td>
+<td style="text-align: center;"><em>Observation: Log-Price shows a strong <strong>inverse linear relationship</strong> with <strong>Car Age</strong> (depreciation) and a strong <strong>positive correlation</strong> with <strong>Engine Size</strong> (performance/class).</em></td>
+<td style="text-align: center;"><em>Observation: Significant differences in the <strong>median price</strong> across fuel types confirm this categorical feature has <strong>strong predictive power</strong> and is not independent of the target.</em></td>
 </tr>
 </tbody>
 </table>
+<p>Detail: Two key features were engineered for this analysis: <strong>Car Age</strong> (calculated as <code>Current_Year - Model_Year</code>) and <strong>Price per KM</strong> (calculated as <code>Price_USD / Mileage_KM</code>), both showing significant predictive value.</p>
 </section>
-<section id="modeling-approach" class="slide level2 center">
+<section id="modeling-approach" class="slide level2">
 <h2>Modeling Approach</h2>
 <h3 id="temporal-validation-strategy">Temporal Validation Strategy</h3>
 <ul>
@@ -434,7 +412,7 @@ Min Set Khant (Solo)
 <li><strong>Evaluation:</strong> MAE and RMSE are converted back to <strong>USD</strong> for business interpretability.</li>
 </ul>
 </section>
-<section id="random-forest-performance" class="slide level2 center">
+<section id="random-forest-performance" class="slide level2">
 <h2>Random Forest Performance</h2>
 <h3 id="model-accuracy-reporting-in-usd">Model Accuracy (Reporting in USD)</h3>
 <table class="caption-top">
@@ -470,38 +448,53 @@ Min Set Khant (Solo)
 </table>
 <p><em>Interpretation: The model successfully predicted 2024 prices with an average absolute error of approximately <strong>$531.13</strong>, proving its temporal stability.</em></p>
 </section>
-<section id="key-price-drivers" class="slide level2 center">
-<h2>Key Price Drivers</h2>
-<h3 id="feature-importance-analysis">Feature Importance Analysis</h3>
-<ul>
-<li><strong>Model Insight</strong>: We use the Random Forest’s Gini Importance to rank the features. The feature importance graph below illustrates these findings.</li>
-</ul>
-
-<img data-src="../visuals/rf_feature_importance.png" class="r-stretch"><h4 id="top-5-predictors-of-bmw-price">Top 5 Predictors of BMW Price:</h4>
+<section id="key-price-drivers-feature-importance" class="slide level2">
+<h2>Key Price Drivers: Feature Importance</h2>
+<h3 id="top-5-predictors-of-bmw-price">Top 5 Predictors of BMW Price</h3>
+<p>The Random Forest model identified these key drivers based on <strong>Gini Impurity Reduction</strong>:</p>
 <ol type="1">
-<li><strong>Price per KM</strong> (0.682) - <em>The single greatest indicator of price.</em></li>
-<li><strong>Mileage (KM)</strong> (0.318) - <em>Indicates vehicle wear and depreciation.</em></li>
+<li><strong>Price per KM</strong> (<strong>0.682</strong>) - <em>Represents the calculated efficiency/condition ratio; its dominance suggests it captures the <strong>residual value</strong> most effectively.</em></li>
+<li><strong>Mileage (KM)</strong> (<strong>0.318</strong>) - <em>Primary measure of vehicle use and wear, directly driving the rate of depreciation.</em></li>
 <li><strong>Engine Size (L)</strong> (0.000018)</li>
 <li><strong>Car Age</strong> (0.000015)</li>
 <li><strong>Transmission: Manual</strong> (0.000004)</li>
 </ol>
 </section>
-<section id="conclusion-and-recommendations" class="slide level2 center">
-<h2>Conclusion and Recommendations</h2>
-<h3 id="summary-of-findings">Summary of Findings</h3>
+<section class="slide level2">
+
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th style="text-align: center;">Full Feature Importance</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><img data-src="../visuals/rf_feature_importance.png"></td>
+</tr>
+</tbody>
+</table>
+<p><em>Technical Detail:</em> The model was chosen for its ability to calculate <strong>Feature Importance</strong> via Mean Decrease in Impurity (Gini). The trained model was serialized and saved as <code>rf_best_model.joblib</code> for future deployment.</p>
+</section>
+<section id="conclusion-summary-of-findings" class="slide level2">
+<h2>Conclusion: Summary of Findings</h2>
+<h3 id="answering-the-key-questions">Answering the Key Questions</h3>
 <ul>
-<li><strong>Top Drivers:</strong> Price is overwhelmingly driven by the <strong>Price per KM</strong> and <strong>Mileage (KM)</strong>, suggesting depreciation rates and total distance traveled are the primary variables used by the market.</li>
-<li><strong>Model Success:</strong> The Random Forest model demonstrates <strong>strong temporal validation</strong>, accurately predicting 2024 market prices with a mean absolute error of <strong>$531.13</strong>.</li>
-<li><strong>Key Market Insight:</strong> Model popularity and sales volume are highly specific to <strong>Region</strong>, suggesting localized strategies are essential.</li>
+<li><strong>Top Drivers:</strong> Price is overwhelmingly driven by <strong>Price per KM</strong> and <strong>Mileage (KM)</strong>.</li>
+<li><strong>Model Success:</strong> The Random Forest model demonstrates <strong>strong temporal validation</strong>, accurately predicting 2024 market prices with an MAE of <strong>$531.13</strong>.</li>
+<li><strong>Market Insight:</strong> Model popularity and sales volume are highly specific to <strong>Region</strong>.</li>
 </ul>
-<h3 id="business-recommendations">Business Recommendations</h3>
+</section>
+<section id="business-recommendations" class="slide level2">
+<h2>Business Recommendations</h2>
+<h3 id="actionable-insights-for-strategy">Actionable Insights for Strategy</h3>
 <ol type="1">
 <li><strong>Pricing Strategy:</strong> Use the model’s feature importance to set pricing guidelines. The low MAE ($531.13) provides high confidence for automated pricing models.</li>
 <li><strong>Inventory Optimization:</strong> Focus inventory based on the regional popularity derived from the EDA.</li>
-<li><strong>Future Validation:</strong> Re-run the temporal validation annually to ensure the model’s stability.</li>
+<li><strong>Future Validation:</strong> Re-run the temporal validation annually to ensure the model’s stability and adapt to market shifts.</li>
 </ol>
 </section>
-<section id="thank-you" class="slide level2 center">
+<section id="thank-you" class="slide level2">
 <h2>Thank You</h2>
 <h3 id="info-523-final-project">INFO-523 Final Project</h3>
 <ul>
@@ -515,7 +508,7 @@ Min Set Khant (Solo)
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
 <div class="footer footer-default">
-
+<p>INFO-523 | BMW Price Prediction</p>
 </div>
 </div></div>
 
@@ -597,7 +590,7 @@ Min Set Khant (Solo)
         disableLayout: false,
 
         // Vertical centering of slides
-        center: true,
+        center: false,
 
         // Enables touch navigation on devices with touch input
         touch: true,
@@ -673,7 +666,7 @@ Min Set Khant (Solo)
         previewLinks: false,
 
         // Transition style (none/fade/slide/convex/concave/zoom)
-        transition: 'fade',
+        transition: 'slide',
 
         // Transition speed (default/fast/slow)
         transitionSpeed: 'default',

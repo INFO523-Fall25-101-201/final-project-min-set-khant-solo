@@ -36,25 +36,26 @@ import seaborn as sns
 data = pd.read_csv("data/bmw_worldwide_sales.csv")
 data.head(10)
 ```
+
 ## Dataset Overview
+
 ```{python,  label= dataset-summary,message =false,echo= false }
 data.describe()
 data.shape
 ```
-This dataset — BMW Worldwide Sales Records (2010–2024)
- — contains over 50,000 records of BMW’s sales and specifications across multiple regions.
-Key features include:
-Model, Year, Engine_Size_L, Transmission, Fuel_Type, Color, Region, Price, and Sales_Volume.
-This dataset was chosen because it provides a diverse range of attributes for exploring market behavior, pricing trends, and customer preferences in the automotive industry.
+
+This dataset — BMW Worldwide Sales Records (2010–2024) — contains over 50,000 records of BMW’s sales and specifications across multiple regions. Key features include: Model, Year, Engine_Size_L, Transmission, Fuel_Type, Color, Region, Price, and Sales_Volume. This dataset was chosen because it provides a diverse range of attributes for exploring market behavior, pricing trends, and customer preferences in the automotive industry.
 
 ## Questions
-1. What are the key factors influencing BMW used-car prices in the market?
-2. Can machine learning models accurately predict used-car prices?
-3. How stable are these predictions over time?
-4. Using a temporal split, how well can the model predict pricing trends for “next year”?
+
+1.  What are the key factors influencing BMW used-car prices in the market?
+2.  Can machine learning models accurately predict used-car prices?
+3.  How stable are these predictions over time?
+4.  Using a temporal split, how well can the model predict pricing trends for “next year”?
 
 ## Analysis Plan
-1. Data Cleaning & Preparation
+
+1.  Data Cleaning & Preparation
 
 Handle missing values
 
@@ -64,7 +65,7 @@ Encode categorical variables
 
 Ensure time-related variables are aligned for temporal analysis
 
-2. Exploratory Data Analysis (EDA)
+2.  Exploratory Data Analysis (EDA)
 
 Price trends by year, region, and model
 
@@ -72,7 +73,7 @@ Correlation analysis between price and vehicle attributes
 
 Identify patterns that may indicate shifting market preferences
 
-3. Modeling Approach
+3.  Modeling Approach
 
 Apply Machine Learning Models:
 
@@ -92,7 +93,7 @@ Feature importance analysis
 
 Temporal train–test split to simulate predicting next-year price trends
 
-4. Visualization Dashboard
+4.  Visualization Dashboard
 
 Build clear, interactive visualizations using matplotlib / seaborn
 
@@ -106,9 +107,9 @@ Model performance summary
 
 Visualization Dashboard:
 
-- Build clear, interactive plots for trends and insights using matplotlib and seaborn.
+-   Build clear, interactive plots for trends and insights using matplotlib and seaborn.
 
 Ethical AI Use Disclosure:
 
-- AI tools (e.g., ChatGPT) were used ethically for code debugging, idea exploration, and documentation enhancement.
-- All datasets are real and sourced from Kaggle.
+-   AI tools (e.g., ChatGPT) were used ethically for code debugging, idea exploration, and documentation enhancement.
+-   All datasets are real and sourced from Kaggle.
