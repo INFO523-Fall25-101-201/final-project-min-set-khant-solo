@@ -2,21 +2,29 @@
 title: "BMW Car Sales Analysis & Price Prediction"
 subtitle: "Temporal Validation of Market Value"
 author: "Min Set Khant (Solo)"
+
 title-slide-attributes:
   data-background-image: images/watercolour_sys02_img34_teacup-ocean.jpg
-  data-background-size: stretch
-  data-background-opacity: "0.7"
+  data-background-size: cover
+  data-background-opacity: "0.6"
   data-slide-number: none
+
 format:
   revealjs:
-    theme:  ['data/customtheming.scss']
-    slide-number: true     
-    transition: slide      
-    center: false        
-    footer: "INFO-523 | BMW Price Prediction" 
-  
+    theme: 
+      - default
+      - data/customtheming.scss   # custom theme now loads correctly
+    slide-number: true
+    transition: slide
+    center: false
+    footer: "INFO-523 | BMW Price Prediction"
+    width: 1200            
+    height: 1300            
+    margin: 0.05            
+
 editor: visual
 jupyter: python3
+
 execute:
   echo: false
 ---
@@ -56,16 +64,20 @@ data = pd.read_csv("data/bmw_worldwide_sales.csv")
 data.head(10)
 ```
 
+------------------------------------------------------------------------
+
 ## EDA: Market Trends & Segmentation
 
 ### Regional Performance and Price Trends
 
 | Sales Trend Over Time | Top Models by Regional Sales Volume |
 |:----------------------------------:|:----------------------------------:|
-| ![](../visuals/avg_price_by_year.png) | ![](../visuals/top_model_per_region.png) |
+| ![](visuals/avg_price_by_year.png) | ![](visuals/top_model_per_region.png) |
 | *Observation: The average price shows a **clear, non-linear upward trend** over time, suggesting market inflation. This justifies the **Temporal Validation** strategy.* | *Observation: Model popularity is **highly segmented by region**. This confirms that the **Region** variable is a critical feature for effective price segmentation.* |
 
 Detail: The analysis utilized over **50,000 records** of multi-regional sales. Regional features were processed using **One-Hot Encoding** to prevent models from assigning arbitrary ordinal relationships to categories.
+
+------------------------------------------------------------------------
 
 ## Global Market Demand
 
@@ -74,9 +86,9 @@ Detail: The analysis utilized over **50,000 records** of multi-regional sales. R
 | Volume by Model (2010–2024) |
 |------------------------------------------------------------------------|
 | ![](visuals/top10_models_global.png) |
-| Insight:Globally, sales volume is often dominated by \*\*core sedan and SUV series\*\* (e.g., 3-Series, 5-Series, X3, X5), reflecting high overall market liquidity. |
+| Insight:Globally, sales volume is often dominated by **core sedan and SUV series** (e.g., 3-Series, 5-Series, X3, X5), reflecting high overall market liquidity. |
 
-Impact:Models with high global volume typically exhibit more \*\*stable pricing\*\* due to consistent demand, which reduces prediction volatility. EDA Detail:This volume data was analyzed \*before\* the temporal split to understand the underlying market foundation across all years. \|
+Impact:Models with high global volume typically exhibit more **stable pricing** due to consistent demand, which reduces prediction volatility. EDA Detail:This volume data was analyzed **before** the temporal split to understand the underlying market foundation across all years. \|
 
 ## EDA: Correlation Analysis
 
@@ -84,7 +96,7 @@ Impact:Models with high global volume typically exhibit more \*\*stable pricing\
 
 | Correlation Matrix | Price Distribution by Fuel Type |
 |:----------------------------------:|:----------------------------------:|
-| ![](../visuals/correlation_matrix.png) | ![](../visuals/price_by_fueltype_box.png) |
+| ![](visuals/correlation_matrix.png) | ![](visuals/price_by_fueltype_box.png) |
 | *Observation: Log-Price shows a strong **inverse linear relationship** with **Car Age** (depreciation) and a strong **positive correlation** with **Engine Size** (performance/class).* | *Observation: Significant differences in the **median price** across fuel types confirm this categorical feature has **strong predictive power** and is not independent of the target.* |
 
 Detail: Two key features were engineered for this analysis: **Car Age** (calculated as `Current_Year - Model_Year`) and **Price per KM** (calculated as `Price_USD / Mileage_KM`), both showing significant predictive value.
