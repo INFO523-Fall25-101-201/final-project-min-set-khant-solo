@@ -2,13 +2,13 @@ project:
   type: website
 
 website:
-  title: BMW Car Sales Analysis
+  title: INFO 523 | BMW Price Prediction
   navbar:
     right:
       - icon: github
         href: https://github.com/INFO523-Fall25-101-201/final-project-min-set-khant-solo
     left:
-      - text: Project
+      - text: Project Home
         href: index.qmd
       - text: Proposal
         href: proposal.qmd

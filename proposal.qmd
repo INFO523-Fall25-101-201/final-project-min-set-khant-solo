@@ -1,11 +1,11 @@
 ---
-title: "INFO-523-DATA MININIG_Final Project '**BMW Car Price Analysis & Prediction**'"
+title: "INFO-523-DATA MININIG_Final Project '**BMW Car Price Analysis & Prediction (Project Proposal)**'"
 subtitle: "Proposal"
 author: 
   - name: "Team Name - Min Set Khant (Solo)"
     affiliations:
       - name: "College of Information Science, University of Arizona"
-description: "Analyze, visualize, and predict BMW car prices using multi-regional sales data from 2010–2024, exploring how features such as model, region, color, engine size, and transmission influence market value and sales performance."
+description: "Proposal to analyze, visualize, and predict BMW car prices (2010–2024) to explore the temporal stability of market value as influenced by model, region, engine size, and transmission.."
 format:
   html:
     code-tools: true

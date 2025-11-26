@@ -7,9 +7,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Team Name - Min Set Khant (Solo)">
-<meta name="description" content="Analyze, visualize, and predict BMW car prices using multi-regional sales data from 2010–2024, exploring how features such as model, region, color, engine size, and transmission influence market value and sales performance.">
+<meta name="description" content="Proposal to analyze, visualize, and predict BMW car prices (2010–2024) to explore the temporal stability of market value as influenced by model, region, engine size, and transmission..">
 
-<title>INFO-523-DATA MININIG_Final Project ‘BMW Car Price Analysis &amp; Prediction’ – BMW Car Sales Analysis</title>
+<title>INFO-523-DATA MININIG_Final Project ‘BMW Car Price Analysis &amp; Prediction (Project Proposal)’ – BMW Car Sales Analysis</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -4121,13 +4121,13 @@ var requirejs,require,define;(function(global,setTimeout){var req,s,head,baseEle
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<div class="quarto-title-block"><div><h1 class="title">INFO-523-DATA MININIG_Final Project ‘<strong>BMW Car Price Analysis &amp; Prediction</strong>’</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
+<div class="quarto-title-block"><div><h1 class="title">INFO-523-DATA MININIG_Final Project ‘<strong>BMW Car Price Analysis &amp; Prediction (Project Proposal)</strong>’</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
 <p class="subtitle lead">Proposal</p>
 </div>
 
 <div>
   <div class="description">
-    Analyze, visualize, and predict BMW car prices using multi-regional sales data from 2010–2024, exploring how features such as model, region, color, engine size, and transmission influence market value and sales performance.
+    Proposal to analyze, visualize, and predict BMW car prices (2010–2024) to explore the temporal stability of market value as influenced by model, region, engine size, and transmission..
   </div>
 </div>
 
@@ -4339,7 +4339,7 @@ var requirejs,require,define;(function(global,setTimeout){var req,s,head,baseEle
 </section>
 <section id="dataset-overview" class="level2">
 <h2 class="anchored" data-anchor-id="dataset-overview">Dataset Overview</h2>
-<div id="d448bcfa" class="cell" data-execution_count="3">
+<div id="a6c0c082" class="cell" data-execution_count="3">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1"></a>data.describe()</span>
 <span id="cb3-2"><a href="#cb3-2"></a>data.shape</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="3">
@@ -4912,13 +4912,13 @@ var requirejs,require,define;(function(global,setTimeout){var req,s,head,baseEle
   });
   </script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5" data-shortcodes="false"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb5-1"><a href="#cb5-1"></a><span class="co">---</span></span>
-<span id="cb5-2"><a href="#cb5-2"></a><span class="an">title:</span><span class="co"> &quot;INFO-523-DATA MININIG_Final Project &#39;**BMW Car Price Analysis &amp; Prediction**&#39;&quot;</span></span>
+<span id="cb5-2"><a href="#cb5-2"></a><span class="an">title:</span><span class="co"> &quot;INFO-523-DATA MININIG_Final Project &#39;**BMW Car Price Analysis &amp; Prediction (Project Proposal)**&#39;&quot;</span></span>
 <span id="cb5-3"><a href="#cb5-3"></a><span class="an">subtitle:</span><span class="co"> &quot;Proposal&quot;</span></span>
 <span id="cb5-4"><a href="#cb5-4"></a><span class="an">author:</span><span class="co"> </span></span>
 <span id="cb5-5"><a href="#cb5-5"></a><span class="co">  - name: &quot;Team Name - Min Set Khant (Solo)&quot;</span></span>
 <span id="cb5-6"><a href="#cb5-6"></a><span class="co">    affiliations:</span></span>
 <span id="cb5-7"><a href="#cb5-7"></a><span class="co">      - name: &quot;College of Information Science, University of Arizona&quot;</span></span>
-<span id="cb5-8"><a href="#cb5-8"></a><span class="an">description:</span><span class="co"> &quot;Analyze, visualize, and predict BMW car prices using multi-regional sales data from 2010–2024, exploring how features such as model, region, color, engine size, and transmission influence market value and sales performance.&quot;</span></span>
+<span id="cb5-8"><a href="#cb5-8"></a><span class="an">description:</span><span class="co"> &quot;Proposal to analyze, visualize, and predict BMW car prices (2010–2024) to explore the temporal stability of market value as influenced by model, region, engine size, and transmission..&quot;</span></span>
 <span id="cb5-9"><a href="#cb5-9"></a><span class="an">format:</span></span>
 <span id="cb5-10"><a href="#cb5-10"></a><span class="co">  html:</span></span>
 <span id="cb5-11"><a href="#cb5-11"></a><span class="co">    code-tools: true</span></span>
@@ -4949,82 +4949,83 @@ var requirejs,require,define;(function(global,setTimeout){var req,s,head,baseEle
 <span id="cb5-40"><a href="#cb5-40"></a>data <span class="op">=</span> pd.read_csv(<span class="st">&quot;data/bmw_worldwide_sales.csv&quot;</span>)</span>
 <span id="cb5-41"><a href="#cb5-41"></a>data.head(<span class="dv">10</span>)</span>
 <span id="cb5-42"><a href="#cb5-42"></a><span class="in">```</span></span>
-<span id="cb5-43"><a href="#cb5-43"></a><span class="fu">## Dataset Overview</span></span>
-<span id="cb5-44"><a href="#cb5-44"></a><span class="in">```{python,  label= dataset-summary,message =false,echo= false }</span></span>
-<span id="cb5-45"><a href="#cb5-45"></a>data.describe()</span>
-<span id="cb5-46"><a href="#cb5-46"></a>data.shape</span>
-<span id="cb5-47"><a href="#cb5-47"></a><span class="in">```</span></span>
-<span id="cb5-48"><a href="#cb5-48"></a>This dataset — BMW Worldwide Sales Records (2010–2024)</span>
-<span id="cb5-49"><a href="#cb5-49"></a> — contains over 50,000 records of BMW’s sales and specifications across multiple regions.</span>
-<span id="cb5-50"><a href="#cb5-50"></a>Key features include:</span>
-<span id="cb5-51"><a href="#cb5-51"></a>Model, Year, Engine_Size_L, Transmission, Fuel_Type, Color, Region, Price, and Sales_Volume.</span>
-<span id="cb5-52"><a href="#cb5-52"></a>This dataset was chosen because it provides a diverse range of attributes for exploring market behavior, pricing trends, and customer preferences in the automotive industry.</span>
-<span id="cb5-53"><a href="#cb5-53"></a></span>
-<span id="cb5-54"><a href="#cb5-54"></a><span class="fu">## Questions</span></span>
-<span id="cb5-55"><a href="#cb5-55"></a><span class="ss">1. </span>What are the key factors influencing BMW used-car prices in the market?</span>
-<span id="cb5-56"><a href="#cb5-56"></a><span class="ss">2. </span>Can machine learning models accurately predict used-car prices?</span>
-<span id="cb5-57"><a href="#cb5-57"></a><span class="ss">3. </span>How stable are these predictions over time?</span>
-<span id="cb5-58"><a href="#cb5-58"></a><span class="ss">4. </span>Using a temporal split, how well can the model predict pricing trends for “next year”?</span>
+<span id="cb5-43"><a href="#cb5-43"></a></span>
+<span id="cb5-44"><a href="#cb5-44"></a><span class="fu">## Dataset Overview</span></span>
+<span id="cb5-45"><a href="#cb5-45"></a></span>
+<span id="cb5-46"><a href="#cb5-46"></a><span class="in">```{python,  label= dataset-summary,message =false,echo= false }</span></span>
+<span id="cb5-47"><a href="#cb5-47"></a>data.describe()</span>
+<span id="cb5-48"><a href="#cb5-48"></a>data.shape</span>
+<span id="cb5-49"><a href="#cb5-49"></a><span class="in">```</span></span>
+<span id="cb5-50"><a href="#cb5-50"></a></span>
+<span id="cb5-51"><a href="#cb5-51"></a>This dataset — BMW Worldwide Sales Records (2010–2024) — contains over 50,000 records of BMW’s sales and specifications across multiple regions. Key features include: Model, Year, Engine_Size_L, Transmission, Fuel_Type, Color, Region, Price, and Sales_Volume. This dataset was chosen because it provides a diverse range of attributes for exploring market behavior, pricing trends, and customer preferences in the automotive industry.</span>
+<span id="cb5-52"><a href="#cb5-52"></a></span>
+<span id="cb5-53"><a href="#cb5-53"></a><span class="fu">## Questions</span></span>
+<span id="cb5-54"><a href="#cb5-54"></a></span>
+<span id="cb5-55"><a href="#cb5-55"></a><span class="ss">1.  </span>What are the key factors influencing BMW used-car prices in the market?</span>
+<span id="cb5-56"><a href="#cb5-56"></a><span class="ss">2.  </span>Can machine learning models accurately predict used-car prices?</span>
+<span id="cb5-57"><a href="#cb5-57"></a><span class="ss">3.  </span>How stable are these predictions over time?</span>
+<span id="cb5-58"><a href="#cb5-58"></a><span class="ss">4.  </span>Using a temporal split, how well can the model predict pricing trends for “next year”?</span>
 <span id="cb5-59"><a href="#cb5-59"></a></span>
 <span id="cb5-60"><a href="#cb5-60"></a><span class="fu">## Analysis Plan</span></span>
-<span id="cb5-61"><a href="#cb5-61"></a><span class="ss">1. </span>Data Cleaning &amp; Preparation</span>
-<span id="cb5-62"><a href="#cb5-62"></a></span>
-<span id="cb5-63"><a href="#cb5-63"></a>Handle missing values</span>
-<span id="cb5-64"><a href="#cb5-64"></a></span>
-<span id="cb5-65"><a href="#cb5-65"></a>Standardize numerical units</span>
-<span id="cb5-66"><a href="#cb5-66"></a></span>
-<span id="cb5-67"><a href="#cb5-67"></a>Encode categorical variables</span>
-<span id="cb5-68"><a href="#cb5-68"></a></span>
-<span id="cb5-69"><a href="#cb5-69"></a>Ensure time-related variables are aligned for temporal analysis</span>
-<span id="cb5-70"><a href="#cb5-70"></a></span>
-<span id="cb5-71"><a href="#cb5-71"></a><span class="ss">2. </span>Exploratory Data Analysis (EDA)</span>
-<span id="cb5-72"><a href="#cb5-72"></a></span>
-<span id="cb5-73"><a href="#cb5-73"></a>Price trends by year, region, and model</span>
-<span id="cb5-74"><a href="#cb5-74"></a></span>
-<span id="cb5-75"><a href="#cb5-75"></a>Correlation analysis between price and vehicle attributes</span>
-<span id="cb5-76"><a href="#cb5-76"></a></span>
-<span id="cb5-77"><a href="#cb5-77"></a>Identify patterns that may indicate shifting market preferences</span>
-<span id="cb5-78"><a href="#cb5-78"></a></span>
-<span id="cb5-79"><a href="#cb5-79"></a><span class="ss">3. </span>Modeling Approach</span>
-<span id="cb5-80"><a href="#cb5-80"></a></span>
-<span id="cb5-81"><a href="#cb5-81"></a>Apply Machine Learning Models:</span>
-<span id="cb5-82"><a href="#cb5-82"></a></span>
-<span id="cb5-83"><a href="#cb5-83"></a>Linear Regression</span>
-<span id="cb5-84"><a href="#cb5-84"></a></span>
-<span id="cb5-85"><a href="#cb5-85"></a>Decision Tree Regression</span>
-<span id="cb5-86"><a href="#cb5-86"></a></span>
-<span id="cb5-87"><a href="#cb5-87"></a>Random Forest Regression</span>
-<span id="cb5-88"><a href="#cb5-88"></a></span>
-<span id="cb5-89"><a href="#cb5-89"></a>Evaluate using:</span>
-<span id="cb5-90"><a href="#cb5-90"></a></span>
-<span id="cb5-91"><a href="#cb5-91"></a>RMSE, MAE, R²</span>
-<span id="cb5-92"><a href="#cb5-92"></a></span>
-<span id="cb5-93"><a href="#cb5-93"></a>Perform:</span>
-<span id="cb5-94"><a href="#cb5-94"></a></span>
-<span id="cb5-95"><a href="#cb5-95"></a>Feature importance analysis</span>
-<span id="cb5-96"><a href="#cb5-96"></a></span>
-<span id="cb5-97"><a href="#cb5-97"></a>Temporal train–test split to simulate predicting next-year price trends</span>
-<span id="cb5-98"><a href="#cb5-98"></a></span>
-<span id="cb5-99"><a href="#cb5-99"></a><span class="ss">4. </span>Visualization Dashboard</span>
-<span id="cb5-100"><a href="#cb5-100"></a></span>
-<span id="cb5-101"><a href="#cb5-101"></a>Build clear, interactive visualizations using matplotlib / seaborn</span>
-<span id="cb5-102"><a href="#cb5-102"></a></span>
-<span id="cb5-103"><a href="#cb5-103"></a>Include:</span>
-<span id="cb5-104"><a href="#cb5-104"></a></span>
-<span id="cb5-105"><a href="#cb5-105"></a>Price distribution</span>
-<span id="cb5-106"><a href="#cb5-106"></a></span>
-<span id="cb5-107"><a href="#cb5-107"></a>Trend lines across years</span>
-<span id="cb5-108"><a href="#cb5-108"></a></span>
-<span id="cb5-109"><a href="#cb5-109"></a>Model performance summary</span>
-<span id="cb5-110"><a href="#cb5-110"></a></span>
-<span id="cb5-111"><a href="#cb5-111"></a>Visualization Dashboard:</span>
-<span id="cb5-112"><a href="#cb5-112"></a></span>
-<span id="cb5-113"><a href="#cb5-113"></a><span class="ss">- </span>Build clear, interactive plots for trends and insights using matplotlib and seaborn.</span>
-<span id="cb5-114"><a href="#cb5-114"></a></span>
-<span id="cb5-115"><a href="#cb5-115"></a>Ethical AI Use Disclosure:</span>
-<span id="cb5-116"><a href="#cb5-116"></a></span>
-<span id="cb5-117"><a href="#cb5-117"></a><span class="ss">- </span>AI tools (e.g., ChatGPT) were used ethically for code debugging, idea exploration, and documentation enhancement.</span>
-<span id="cb5-118"><a href="#cb5-118"></a><span class="ss">- </span>All datasets are real and sourced from Kaggle.</span>
+<span id="cb5-61"><a href="#cb5-61"></a></span>
+<span id="cb5-62"><a href="#cb5-62"></a><span class="ss">1.  </span>Data Cleaning &amp; Preparation</span>
+<span id="cb5-63"><a href="#cb5-63"></a></span>
+<span id="cb5-64"><a href="#cb5-64"></a>Handle missing values</span>
+<span id="cb5-65"><a href="#cb5-65"></a></span>
+<span id="cb5-66"><a href="#cb5-66"></a>Standardize numerical units</span>
+<span id="cb5-67"><a href="#cb5-67"></a></span>
+<span id="cb5-68"><a href="#cb5-68"></a>Encode categorical variables</span>
+<span id="cb5-69"><a href="#cb5-69"></a></span>
+<span id="cb5-70"><a href="#cb5-70"></a>Ensure time-related variables are aligned for temporal analysis</span>
+<span id="cb5-71"><a href="#cb5-71"></a></span>
+<span id="cb5-72"><a href="#cb5-72"></a><span class="ss">2.  </span>Exploratory Data Analysis (EDA)</span>
+<span id="cb5-73"><a href="#cb5-73"></a></span>
+<span id="cb5-74"><a href="#cb5-74"></a>Price trends by year, region, and model</span>
+<span id="cb5-75"><a href="#cb5-75"></a></span>
+<span id="cb5-76"><a href="#cb5-76"></a>Correlation analysis between price and vehicle attributes</span>
+<span id="cb5-77"><a href="#cb5-77"></a></span>
+<span id="cb5-78"><a href="#cb5-78"></a>Identify patterns that may indicate shifting market preferences</span>
+<span id="cb5-79"><a href="#cb5-79"></a></span>
+<span id="cb5-80"><a href="#cb5-80"></a><span class="ss">3.  </span>Modeling Approach</span>
+<span id="cb5-81"><a href="#cb5-81"></a></span>
+<span id="cb5-82"><a href="#cb5-82"></a>Apply Machine Learning Models:</span>
+<span id="cb5-83"><a href="#cb5-83"></a></span>
+<span id="cb5-84"><a href="#cb5-84"></a>Linear Regression</span>
+<span id="cb5-85"><a href="#cb5-85"></a></span>
+<span id="cb5-86"><a href="#cb5-86"></a>Decision Tree Regression</span>
+<span id="cb5-87"><a href="#cb5-87"></a></span>
+<span id="cb5-88"><a href="#cb5-88"></a>Random Forest Regression</span>
+<span id="cb5-89"><a href="#cb5-89"></a></span>
+<span id="cb5-90"><a href="#cb5-90"></a>Evaluate using:</span>
+<span id="cb5-91"><a href="#cb5-91"></a></span>
+<span id="cb5-92"><a href="#cb5-92"></a>RMSE, MAE, R²</span>
+<span id="cb5-93"><a href="#cb5-93"></a></span>
+<span id="cb5-94"><a href="#cb5-94"></a>Perform:</span>
+<span id="cb5-95"><a href="#cb5-95"></a></span>
+<span id="cb5-96"><a href="#cb5-96"></a>Feature importance analysis</span>
+<span id="cb5-97"><a href="#cb5-97"></a></span>
+<span id="cb5-98"><a href="#cb5-98"></a>Temporal train–test split to simulate predicting next-year price trends</span>
+<span id="cb5-99"><a href="#cb5-99"></a></span>
+<span id="cb5-100"><a href="#cb5-100"></a><span class="ss">4.  </span>Visualization Dashboard</span>
+<span id="cb5-101"><a href="#cb5-101"></a></span>
+<span id="cb5-102"><a href="#cb5-102"></a>Build clear, interactive visualizations using matplotlib / seaborn</span>
+<span id="cb5-103"><a href="#cb5-103"></a></span>
+<span id="cb5-104"><a href="#cb5-104"></a>Include:</span>
+<span id="cb5-105"><a href="#cb5-105"></a></span>
+<span id="cb5-106"><a href="#cb5-106"></a>Price distribution</span>
+<span id="cb5-107"><a href="#cb5-107"></a></span>
+<span id="cb5-108"><a href="#cb5-108"></a>Trend lines across years</span>
+<span id="cb5-109"><a href="#cb5-109"></a></span>
+<span id="cb5-110"><a href="#cb5-110"></a>Model performance summary</span>
+<span id="cb5-111"><a href="#cb5-111"></a></span>
+<span id="cb5-112"><a href="#cb5-112"></a>Visualization Dashboard:</span>
+<span id="cb5-113"><a href="#cb5-113"></a></span>
+<span id="cb5-114"><a href="#cb5-114"></a><span class="ss">-   </span>Build clear, interactive plots for trends and insights using matplotlib and seaborn.</span>
+<span id="cb5-115"><a href="#cb5-115"></a></span>
+<span id="cb5-116"><a href="#cb5-116"></a>Ethical AI Use Disclosure:</span>
+<span id="cb5-117"><a href="#cb5-117"></a></span>
+<span id="cb5-118"><a href="#cb5-118"></a><span class="ss">-   </span>AI tools (e.g., ChatGPT) were used ethically for code debugging, idea exploration, and documentation enhancement.</span>
+<span id="cb5-119"><a href="#cb5-119"></a><span class="ss">-   </span>All datasets are real and sourced from Kaggle.</span>
 </code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal><i class="bi"></i></button></div>
 </div></div></div></div></div>
 </div> <!-- /content -->

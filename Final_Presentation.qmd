@@ -58,7 +58,7 @@ data.head(10)
 
 ## EDA: Market Trends & Segmentation
 
-### Regional Performance and Trends
+### Regional Performance and Price Trends
 
 | Sales Trend Over Time | Top Models by Regional Sales Volume |
 |:----------------------------------:|:----------------------------------:|
@@ -67,16 +67,16 @@ data.head(10)
 
 Detail: The analysis utilized over **50,000 records** of multi-regional sales. Regional features were processed using **One-Hot Encoding** to prevent models from assigning arbitrary ordinal relationships to categories.
 
-## Global Market Demand 
+## Global Market Demand
 
-### Global Market Demand: Top 10 Models
+### Global Market Demand: Top 10 Models (2010–2024)
 
 | Volume by Model (2010–2024) |
 |------------------------------------------------------------------------|
 | ![](visuals/top10_models_global.png) |
-| Insight:Globally, sales volume is often dominated by \*\*core sedan and SUV series\*\* (e.g., 3-Series, 5-Series, X3, X5), reflecting high overall market liquidity.
-Impact:Models with high global volume typically exhibit more \*\*stable pricing\*\* due to consistent demand, which reduces prediction volatility.
-EDA Detail:This volume data was analyzed \*before\* the temporal split to understand the underlying market foundation across all years. |
+| Insight:Globally, sales volume is often dominated by \*\*core sedan and SUV series\*\* (e.g., 3-Series, 5-Series, X3, X5), reflecting high overall market liquidity. |
+
+Impact:Models with high global volume typically exhibit more \*\*stable pricing\*\* due to consistent demand, which reduces prediction volatility. EDA Detail:This volume data was analyzed \*before\* the temporal split to understand the underlying market foundation across all years. \|
 
 ## EDA: Correlation Analysis
 
@@ -91,7 +91,7 @@ Detail: Two key features were engineered for this analysis: **Car Age** (calcula
 
 ## Modeling Approach
 
-### Temporal Validation Strategy
+### Temporal Validation Strategy (The Key Differentiator)
 
 -   **Goal:** Test model stability and real-world predictive ability.
 -   **Split:** - **Train Set:** All data from **2010–2023**.
@@ -135,7 +135,7 @@ The Random Forest model identified these key drivers based on **Gini Impurity Re
 
 ### Answering the Key Questions
 
--   **Top Drivers:** Price is overwhelmingly driven by **Price per KM** and **Mileage (KM)**.
+-   **Top Drivers:** Price is overwhelmingly driven by engineered features: **Price per KM** and **Mileage (KM)**.
 -   **Model Success:** The Random Forest model demonstrates **strong temporal validation**, accurately predicting 2024 market prices with an MAE of **\$531.13**.
 -   **Market Insight:** Model popularity and sales volume are highly specific to **Region**.
 
