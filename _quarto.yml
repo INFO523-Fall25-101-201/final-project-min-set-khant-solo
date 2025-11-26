@@ -7,6 +7,7 @@ website:
     right:
       - icon: github
         href: https://github.com/INFO523-Fall25-101-201/final-project-min-set-khant-solo
+               https://minsetkhant.quarto.pub/info-523--bmw-price-prediction/
     left:
       - text: Project Home
         href: index.qmd
