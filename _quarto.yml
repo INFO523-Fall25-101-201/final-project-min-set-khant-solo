@@ -18,6 +18,9 @@ website:
         href: proposal.qmd
       - text: Presentation
         href: Final_Presentation.qmd
+      - text: Presentation
+        href: Final_Presentation.html
+
       - text: About
         href: about.qmd
       - text: Notebooks
