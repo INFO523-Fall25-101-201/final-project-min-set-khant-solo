@@ -1,5 +1,4 @@
-Site URL: https://info523-fall25-101-201.github.io/final-project-min-set-khant-solo/
-https://minsetkhant.quarto.pub/info-523--bmw-price-prediction
+Site URL: https://minsetkhant.quarto.pub/info-523--bmw-price-prediction
 # BMW Car Price Analysis & Prediction
 ## Temporal Validation of Market Value
 
