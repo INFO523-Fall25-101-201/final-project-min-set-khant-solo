@@ -1,21 +1,34 @@
 project:
   type: website
+  resources:
+    - all_notebook/**       # include all notebooks
 
 website:
-  title: Project Title
+  title: INFO 523 | BMW Price Prediction
   navbar:
     right:
       - icon: github
-        href: https://github.com/INFO-523-SU24/final-project # Need to change to your project repo
+        href: https://github.com/INFO523-Fall25-101-201/final-project-min-set-khant-solo
+      - text: Live Site
+        href: https://minsetkhant.quarto.pub/info-523--bmw-price-prediction/
     left:
-      - text: Project
+      - text: Project Home
         href: index.qmd
       - text: Proposal
         href: proposal.qmd
       - text: Presentation
-        href: presentation.qmd
+        href: Final_Presentation.qmd
+      - text: Presentation
+        href: Final_Presentation.html
+
       - text: About
         href: about.qmd
+      - text: Notebooks
+        menu:
+          - text: EDA Notebook
+            href: all_notebook/01_Data_Preparation_and_EDA-.html
+          - text: Modeling Notebook
+            href: all_notebook/02.modeling.html
 
 format:
   html:
@@ -23,6 +36,3 @@ format:
       light: flatly
       dark: darkly
     toc: true
-
-execute:
-  freeze: auto

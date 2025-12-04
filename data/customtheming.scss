@@ -1,3 +1,39 @@
 /*-- scss:defaults --*/
 
-$body-bg: #ffffff;
+/* Add your color overrides, fonts, spacing defaults here if needed */
+
+
+/*-- scss:rules --*/
+
+/* Title Slide Fixes */
+.reveal .slides section[data-state="title-slide"] h1 {
+  font-size: 1.2rem !important;
+  margin-top: 1 px !important;
+  text-align: left !important;
+}
+
+.reveal .slides section[data-state="title-slide"] h2 {
+  font-size: 1.4rem !important;
+  margin-top: 15px !important;
+  text-align: left !important;
+}
+
+.reveal .slides section[data-state="title-slide"] .quarto-title-author {
+  font-size: 1.1rem !important;
+  margin-top: -80 px !important;
+  text-align: left !important;
+}
+
+.reveal .slides section[data-state="title-slide"] {
+  padding-top: 1 px !important;
+}
+
+/* -- you can continue adding styling rules below -- */
+
+
+/*-- scss:mixins --*/
+/* (You can leave this empty) */
+
+
+/*-- scss:functions --*/
+/* (You can leave this empty) */
