@@ -1,0 +1,217 @@
+---
+title: "BMW Car Sales Analysis & Price Prediction"
+subtitle: "Temporal Validation of Market Value Using Random Forest Regression"
+author:
+  - name: "Min Set Khant (Solo)"
+    affiliations:
+      - name: "College of Information Science, University of Arizona (INFO 523)"
+description: "A data mining project to predict used BMW car prices, emphasizing temporal stability and engineered features."
+format:
+  html:
+    code-tools: true
+    code-overflow: wrap
+    embed-resources: true
+editor: visual
+execute:
+  warning: false
+  echo: false
+  jupyter: python3
+---
+# **Abstract**
+
+This project focuses on building a robust, temporally validated machine learning model to predict the market price of used BMW vehicles across multiple global regions. The analysis used the BMW Worldwide Sales dataset (2010–2024) and applied Random Forest Regression.
+
+A key methodological innovation was the use of a **Temporal Train–Test Split**, where the model was trained only on data up to 2023 and tested exclusively on **future sales from 2024**.
+
+The final model achieved:
+
+* **R²:** 0.952
+* **MAE:** $531.13
+* **MSE (log scale):** 0.0079
+
+The strongest finding is the dominance of the engineered feature **Price per KM**, which emerged as the most powerful predictor of BMW car prices, outperforming all original features.
+
+---
+
+# 1. Introduction and Project Goals
+
+This report outlines the methodology, analysis, and results for the final project of INFO 523. The objective was not just prediction, but building a **production-ready forecasting system** capable of anticipating market shifts.
+
+The project answers three core questions:
+
+1. **Feature Importance**
+   What real-world factors most strongly determine BMW pricing?
+
+2. **Model Accuracy**
+   Can a non-linear machine learning model achieve high predictive performance (R² > 0.90)?
+
+3. **Temporal Stability**
+   How reliable are predictions when tested on unseen future data?
+
+Full technical analysis and code can be found in the project notebooks:
+
+* `01_Data_Preparation_and_EDA.ipynb`
+* `02_modeling.ipynb`
+
+---
+
+# 2. Data Preparation and Feature Engineering
+
+## 2.1 Dataset Overview
+
+The dataset consists of **BMW Worldwide Sales Records (2010–2024)** sourced from Kaggle, containing over **50,000 vehicle records** with fields such as:
+
+* Model
+* Mileage
+* Production Year
+* Region
+* Fuel Type
+* Transmission
+* Price in USD
+
+### Cleaning & Transformation Steps
+
+* Missing values imputed (categorical → `"Unknown"`).
+* **Car Age** computed from sale year.
+* **Log transformation** applied to `Price_USD`.
+* One-Hot Encoding applied to:
+
+  * Region
+  * Model
+  * Fuel_Type
+  * Transmission
+
+## 2.2 Engineered Feature: *Price per KM*
+
+The most critical feature created:
+
+$$
+\text{Price per KM} = \frac{\text{Price_USD}}{\text{Mileage_KM}}
+$$
+
+This variable quantifies **value retention efficiency**, separating high-quality vehicles from low-value ones despite similar mileage.
+
+It ultimately became the **single strongest predictor** in the model.
+
+---
+
+# 3. Exploratory Data Analysis (EDA)
+
+Several key findings influenced our modeling strategy.
+
+## 3.1 Market Price Trend
+
+Post-2020, BMW used car prices exhibit a **sharp upward spike**, reflecting:
+
+* Supply chain shortages
+* Inflation
+* Global demand shifts
+
+This volatility made **temporal validation** essential.
+
+## 3.2 Regional Segmentation
+
+Top models vary significantly by region:
+
+* North America: SUVs & performance models
+* Europe: compact & diesel variants
+* Asia: fuel-efficient premium sedans
+
+This confirmed that **Region** is a crucial categorical feature.
+
+---
+
+# 4. Modeling Approach and Validation Strategy
+
+## 4.1 Baseline and Final Model
+
+* Baseline: Linear Regression
+* Final Model: **Random Forest Regressor**
+
+Reasons for choosing Random Forest:
+
+* Handles nonlinear relationships
+* Robust to one-hot encoded features
+* Provides interpretable **Feature Importance** scores
+* Performs well under volatile price conditions
+
+## 4.2 Temporal Train–Test Split
+
+To simulate real-world forecasting:
+
+* **Train:** 2010–2023
+* **Test:** 2024
+
+No future data was allowed during training.
+
+This ensured the model learns historical trends and predicts market conditions it has never seen.
+
+---
+
+# 5. Results and Evaluation
+
+## 5.1 Performance on Future Data (2023–2024)
+
+| Metric  | Result      | Interpretation                                  |
+| ------- | ----------- | ----------------------------------------------- |
+| **R²**  | 0.9952       | Explains ~99% of price variance in future sales |
+| **MSE** | 0.0079      | Low error after log transformation              |
+| **MAE** | **$531.13** | Average price prediction error is only $531     |
+
+This MAE is exceptionally low given BMW’s price range, demonstrating **strong temporal stability**.
+
+---
+
+## 5.2 Feature Importance
+
+Ranked by reduction in Gini Impurity:
+
+| Rank | Feature              | Importance | Meaning                            |
+| ---- | -------------------- | ---------- | ---------------------------------- |
+| 1    | **Price per KM**     | 0.682      | Dominant value-retention indicator |
+| 2    | **Mileage (KM)**     | 0.318      | Core depreciation measure          |
+| 3    | Engine Size (L)      | 0.000018   | Minimal impact                     |
+| 4    | Car Age              | 0.000015   | Small but logical                  |
+| 5    | Transmission: Manual | 0.000004   | Niche effect                       |
+
+**Key insight:**
+The engineered feature *Price per KM* is more informative than raw Mileage, Age, or Engine Size.
+
+---
+
+# 6. Conclusion and Business Recommendations
+
+## 6.1 Summary of Findings
+
+The project successfully accomplished its goals:
+
+* **Top Predictors:** Price per KM and Mileage dominate price prediction.
+* **Accuracy:** Random Forest achieved strong predictive performance (R² = 0.9952).
+* **Stability:** Low MAE on forward-looking data confirms the model is reliable for real-world forecasting.
+
+---
+
+## 6.2 Recommended Business Actions
+
+### 1. Pricing Strategy
+
+Integrate **Price per KM** into automated valuation tools.
+The low MAE ($531.13) supports high-confidence pricing automation.
+
+### 2. Inventory Optimization
+
+Use regional patterns from EDA to guide stocking and marketing:
+
+* Target best-performing models per region
+* Avoid low-turnover variants
+
+### 3. Annual Temporal Validation
+
+Re-run the model yearly with updated splits:
+
+* Ensures adaptation to new economic shifts
+* Maintains predictive performance
+* Detects structural breaks in market demand
+
+---
+
