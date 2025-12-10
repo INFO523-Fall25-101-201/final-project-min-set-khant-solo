@@ -56,6 +56,20 @@
     "text": "This project was developed by [Min Set Khant (Solo)] For INFO 523 - Data Mining and Discovery at the University of Arizona, taught by Dr. Greg Chism. The team is comprised of the following team members.\n\nTeam member 1: Min Set Khant (Solo Project) , Master Student of University of Arizona"
   },
   {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "BMW Car Price Analysis & Prediction",
+    "section": "",
+    "text": "This project focuses on analyzing worldwide BMW car sales data from 2010 to 2024 to understand the complex factors that determine a vehicle’s market value. We conduct extensive Exploratory Data Analysis (EDA) to identify key price drivers, including mileage, engine size, car age, and regional sales trends. The core of the project involves building a robust machine learning model (Random Forest Regressor) to accurately predict car prices. Crucially, the model’s performance is validated using a temporal train-test split, simulating a real-world scenario where the model predicts 2024 prices based on data up to 2023. The final model achieves a strong temporal stability with a Mean Absolute Error (MAE) of approximately $531.13, providing high-confidence insights for pricing and inventory optimization strategies."
+  },
+  {
+    "objectID": "index.html#abstract",
+    "href": "index.html#abstract",
+    "title": "BMW Car Price Analysis & Prediction",
+    "section": "",
+    "text": "This project focuses on analyzing worldwide BMW car sales data from 2010 to 2024 to understand the complex factors that determine a vehicle’s market value. We conduct extensive Exploratory Data Analysis (EDA) to identify key price drivers, including mileage, engine size, car age, and regional sales trends. The core of the project involves building a robust machine learning model (Random Forest Regressor) to accurately predict car prices. Crucially, the model’s performance is validated using a temporal train-test split, simulating a real-world scenario where the model predicts 2024 prices based on data up to 2023. The final model achieves a strong temporal stability with a Mean Absolute Error (MAE) of approximately $531.13, providing high-confidence insights for pricing and inventory optimization strategies."
+  },
+  {
     "objectID": "presentation.html#quarto",
     "href": "presentation.html#quarto",
     "title": "Project title",
@@ -74,7 +88,7 @@
     "href": "presentation.html#code",
     "title": "Project title",
     "section": "Code",
-    "text": "Code\n\n\n                            OLS Regression Results                            \n==============================================================================\nDep. Variable:                    mpg   R-squared:                       0.073\nModel:                            OLS   Adj. R-squared:                  0.070\nMethod:                 Least Squares   F-statistic:                     30.59\nDate:                Thu, 04 Dec 2025   Prob (F-statistic):           5.84e-08\nTime:                        12:27:53   Log-Likelihood:                -1346.4\nNo. Observations:                 392   AIC:                             2697.\nDf Residuals:                     390   BIC:                             2705.\nDf Model:                           1                                         \nCovariance Type:            nonrobust                                         \n==============================================================================\n                 coef    std err          t      P&gt;|t|      [0.025      0.975]\n------------------------------------------------------------------------------\nconst         35.8015      2.266     15.800      0.000      31.347      40.257\nspeed       -354.7055     64.129     -5.531      0.000    -480.788    -228.623\n==============================================================================\nOmnibus:                       27.687   Durbin-Watson:                   0.589\nProb(Omnibus):                  0.000   Jarque-Bera (JB):               18.976\nSkew:                           0.420   Prob(JB):                     7.57e-05\nKurtosis:                       2.323   Cond. No.                         169.\n==============================================================================\n\nNotes:\n[1] Standard Errors assume that the covariance matrix of the errors is correctly specified."
+    "text": "Code\n\n\n                            OLS Regression Results                            \n==============================================================================\nDep. Variable:                    mpg   R-squared:                       0.073\nModel:                            OLS   Adj. R-squared:                  0.070\nMethod:                 Least Squares   F-statistic:                     30.59\nDate:                Wed, 10 Dec 2025   Prob (F-statistic):           5.84e-08\nTime:                        11:08:41   Log-Likelihood:                -1346.4\nNo. Observations:                 392   AIC:                             2697.\nDf Residuals:                     390   BIC:                             2705.\nDf Model:                           1                                         \nCovariance Type:            nonrobust                                         \n==============================================================================\n                 coef    std err          t      P&gt;|t|      [0.025      0.975]\n------------------------------------------------------------------------------\nconst         35.8015      2.266     15.800      0.000      31.347      40.257\nspeed       -354.7055     64.129     -5.531      0.000    -480.788    -228.623\n==============================================================================\nOmnibus:                       27.687   Durbin-Watson:                   0.589\nProb(Omnibus):                  0.000   Jarque-Bera (JB):               18.976\nSkew:                           0.420   Prob(JB):                     7.57e-05\nKurtosis:                       2.323   Cond. No.                         169.\n==============================================================================\n\nNotes:\n[1] Standard Errors assume that the covariance matrix of the errors is correctly specified."
   },
   {
     "objectID": "presentation.html#plots",
@@ -119,18 +133,81 @@
     "text": "Feeling adventurous?\n\nYou are welcomed to use the default styling of the slides. In fact, that’s what I expect majority of you will do. You will differentiate yourself with the content of your presentation.\nBut some of you might want to play around with slide styling. Some solutions for this can be found at https://quarto.org/docs/presentations/revealjs."
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "BMW Car Price Analysis & Prediction",
+    "objectID": "writeup.html",
+    "href": "writeup.html",
+    "title": "BMW Car Sales Analysis & Price Prediction",
     "section": "",
-    "text": "This project focuses on analyzing worldwide BMW car sales data from 2010 to 2024 to understand the complex factors that determine a vehicle’s market value. We conduct extensive Exploratory Data Analysis (EDA) to identify key price drivers, including mileage, engine size, car age, and regional sales trends. The core of the project involves building a robust machine learning model (Random Forest Regressor) to accurately predict car prices. Crucially, the model’s performance is validated using a temporal train-test split, simulating a real-world scenario where the model predicts 2024 prices based on data up to 2023. The final model achieves a strong temporal stability with a Mean Absolute Error (MAE) of approximately $531.13, providing high-confidence insights for pricing and inventory optimization strategies."
+    "text": "This project focuses on building a robust, temporally validated machine learning model to predict the market price of used BMW vehicles across multiple global regions. The analysis used the BMW Worldwide Sales dataset (2010–2024) and applied Random Forest Regression.\nA key methodological innovation was the use of a Temporal Train–Test Split, where the model was trained only on data up to 2023 and tested exclusively on future sales from 2024.\nThe final model achieved:\n\nR²: 0.952\nMAE: $531.13\nMSE (log scale): 0.0079\n\nThe strongest finding is the dominance of the engineered feature Price per KM, which emerged as the most powerful predictor of BMW car prices, outperforming all original features."
   },
   {
-    "objectID": "index.html#abstract",
-    "href": "index.html#abstract",
-    "title": "BMW Car Price Analysis & Prediction",
-    "section": "",
-    "text": "This project focuses on analyzing worldwide BMW car sales data from 2010 to 2024 to understand the complex factors that determine a vehicle’s market value. We conduct extensive Exploratory Data Analysis (EDA) to identify key price drivers, including mileage, engine size, car age, and regional sales trends. The core of the project involves building a robust machine learning model (Random Forest Regressor) to accurately predict car prices. Crucially, the model’s performance is validated using a temporal train-test split, simulating a real-world scenario where the model predicts 2024 prices based on data up to 2023. The final model achieves a strong temporal stability with a Mean Absolute Error (MAE) of approximately $531.13, providing high-confidence insights for pricing and inventory optimization strategies."
+    "objectID": "writeup.html#dataset-overview",
+    "href": "writeup.html#dataset-overview",
+    "title": "BMW Car Sales Analysis & Price Prediction",
+    "section": "2.1 Dataset Overview",
+    "text": "2.1 Dataset Overview\nThe dataset consists of BMW Worldwide Sales Records (2010–2024) sourced from Kaggle, containing over 50,000 vehicle records with fields such as:\n\nModel\nMileage\nProduction Year\nRegion\nFuel Type\nTransmission\nPrice in USD\n\n\nCleaning & Transformation Steps\n\nMissing values imputed (categorical → \"Unknown\").\nCar Age computed from sale year.\nLog transformation applied to Price_USD.\nOne-Hot Encoding applied to:\n\nRegion\nModel\nFuel_Type\nTransmission"
+  },
+  {
+    "objectID": "writeup.html#engineered-feature-price-per-km",
+    "href": "writeup.html#engineered-feature-price-per-km",
+    "title": "BMW Car Sales Analysis & Price Prediction",
+    "section": "2.2 Engineered Feature: Price per KM",
+    "text": "2.2 Engineered Feature: Price per KM\nThe most critical feature created:\n\\[\n\\text{Price per KM} = \\frac{\\text{Price_USD}}{\\text{Mileage_KM}}\n\\]\nThis variable quantifies value retention efficiency, separating high-quality vehicles from low-value ones despite similar mileage.\nIt ultimately became the single strongest predictor in the model."
+  },
+  {
+    "objectID": "writeup.html#market-price-trend",
+    "href": "writeup.html#market-price-trend",
+    "title": "BMW Car Sales Analysis & Price Prediction",
+    "section": "3.1 Market Price Trend",
+    "text": "3.1 Market Price Trend\nPost-2020, BMW used car prices exhibit a sharp upward spike, reflecting:\n\nSupply chain shortages\nInflation\nGlobal demand shifts\n\nThis volatility made temporal validation essential."
+  },
+  {
+    "objectID": "writeup.html#regional-segmentation",
+    "href": "writeup.html#regional-segmentation",
+    "title": "BMW Car Sales Analysis & Price Prediction",
+    "section": "3.2 Regional Segmentation",
+    "text": "3.2 Regional Segmentation\nTop models vary significantly by region:\n\nNorth America: SUVs & performance models\nEurope: compact & diesel variants\nAsia: fuel-efficient premium sedans\n\nThis confirmed that Region is a crucial categorical feature."
+  },
+  {
+    "objectID": "writeup.html#baseline-and-final-model",
+    "href": "writeup.html#baseline-and-final-model",
+    "title": "BMW Car Sales Analysis & Price Prediction",
+    "section": "4.1 Baseline and Final Model",
+    "text": "4.1 Baseline and Final Model\n\nBaseline: Linear Regression\nFinal Model: Random Forest Regressor\n\nReasons for choosing Random Forest:\n\nHandles nonlinear relationships\nRobust to one-hot encoded features\nProvides interpretable Feature Importance scores\nPerforms well under volatile price conditions"
+  },
+  {
+    "objectID": "writeup.html#temporal-traintest-split",
+    "href": "writeup.html#temporal-traintest-split",
+    "title": "BMW Car Sales Analysis & Price Prediction",
+    "section": "4.2 Temporal Train–Test Split",
+    "text": "4.2 Temporal Train–Test Split\nTo simulate real-world forecasting:\n\nTrain: 2010–2023\nTest: 2024\n\nNo future data was allowed during training.\nThis ensured the model learns historical trends and predicts market conditions it has never seen."
+  },
+  {
+    "objectID": "writeup.html#performance-on-future-data-20232024",
+    "href": "writeup.html#performance-on-future-data-20232024",
+    "title": "BMW Car Sales Analysis & Price Prediction",
+    "section": "5.1 Performance on Future Data (2023–2024)",
+    "text": "5.1 Performance on Future Data (2023–2024)\n\n\n\n\n\n\n\n\nMetric\nResult\nInterpretation\n\n\n\n\nR²\n0.9952\nExplains ~99% of price variance in future sales\n\n\nMSE\n0.0079\nLow error after log transformation\n\n\nMAE\n$531.13\nAverage price prediction error is only $531\n\n\n\nThis MAE is exceptionally low given BMW’s price range, demonstrating strong temporal stability."
+  },
+  {
+    "objectID": "writeup.html#feature-importance",
+    "href": "writeup.html#feature-importance",
+    "title": "BMW Car Sales Analysis & Price Prediction",
+    "section": "5.2 Feature Importance",
+    "text": "5.2 Feature Importance\nRanked by reduction in Gini Impurity:\n\n\n\n\n\n\n\n\n\nRank\nFeature\nImportance\nMeaning\n\n\n\n\n1\nPrice per KM\n0.682\nDominant value-retention indicator\n\n\n2\nMileage (KM)\n0.318\nCore depreciation measure\n\n\n3\nEngine Size (L)\n0.000018\nMinimal impact\n\n\n4\nCar Age\n0.000015\nSmall but logical\n\n\n5\nTransmission: Manual\n0.000004\nNiche effect\n\n\n\nKey insight: The engineered feature Price per KM is more informative than raw Mileage, Age, or Engine Size."
+  },
+  {
+    "objectID": "writeup.html#summary-of-findings",
+    "href": "writeup.html#summary-of-findings",
+    "title": "BMW Car Sales Analysis & Price Prediction",
+    "section": "6.1 Summary of Findings",
+    "text": "6.1 Summary of Findings\nThe project successfully accomplished its goals:\n\nTop Predictors: Price per KM and Mileage dominate price prediction.\nAccuracy: Random Forest achieved strong predictive performance (R² = 0.9952).\nStability: Low MAE on forward-looking data confirms the model is reliable for real-world forecasting."
+  },
+  {
+    "objectID": "writeup.html#recommended-business-actions",
+    "href": "writeup.html#recommended-business-actions",
+    "title": "BMW Car Sales Analysis & Price Prediction",
+    "section": "6.2 Recommended Business Actions",
+    "text": "6.2 Recommended Business Actions\n\n1. Pricing Strategy\nIntegrate Price per KM into automated valuation tools. The low MAE ($531.13) supports high-confidence pricing automation.\n\n\n2. Inventory Optimization\nUse regional patterns from EDA to guide stocking and marketing:\n\nTarget best-performing models per region\nAvoid low-turnover variants\n\n\n\n3. Annual Temporal Validation\nRe-run the model yearly with updated splits:\n\nEnsures adaptation to new economic shifts\nMaintains predictive performance\nDetects structural breaks in market demand"
   },
   {
     "objectID": "Final_Presentation.html#introduction",

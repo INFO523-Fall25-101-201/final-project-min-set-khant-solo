@@ -1,7 +1,8 @@
 project:
   type: website
   resources:
-    - all_notebook/**       # include all notebooks
+    - all_notebook/**  
+    - writeup.qmd      # include all notebooks
 
 website:
   title: INFO 523 | BMW Price Prediction
@@ -20,6 +21,9 @@ website:
         href: Final_Presentation.qmd
       - text: Presentation
         href: Final_Presentation.html
+      - text: Final Write-Up
+        href: writeup.qmd
+
 
       - text: About
         href: about.qmd
