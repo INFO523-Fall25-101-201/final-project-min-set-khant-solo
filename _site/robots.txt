@@ -1,1 +1,1 @@
-Sitemap: https://INFO523-Fall25-101-201.github.io/final-project-min-set-khant-solo/sitemap.xml
+Sitemap: https://minsetkhant.quarto.pub/info-523--bmw-price-prediction/sitemap.xml
