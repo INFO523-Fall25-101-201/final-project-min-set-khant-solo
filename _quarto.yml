@@ -1,30 +1,25 @@
 project:
   type: website
+  output-dir: docs
   resources:
-    - all_notebook/**  
-    - writeup.qmd      # include all notebooks
+    - all_notebook/**
+    - writeup.qmd
+    - bmw_predictor.qmd
 
 website:
-  title: INFO 523 | BMW Price Prediction
+  title: "INFO 523 | BMW Price Prediction"
   navbar:
-    right:
-      - icon: github
-        href: https://github.com/INFO523-Fall25-101-201/final-project-min-set-khant-solo
-      - text: Live Site
-        href: https://minsetkhant.quarto.pub/info-523--bmw-price-prediction/
     left:
       - text: Project Home
         href: index.qmd
       - text: Proposal
         href: proposal.qmd
       - text: Presentation
-        href: Final_Presentation.qmd
-      - text: Presentation
-        href: Final_Presentation.html
+        href: Final_Presentation.html   
       - text: Final Write-Up
         href: writeup.qmd
-
-
+      - text: BMW Predictor
+        href: bmw_predictor.qmd
       - text: About
         href: about.qmd
       - text: Notebooks
@@ -34,9 +29,16 @@ website:
           - text: Modeling Notebook
             href: all_notebook/02.modeling.html
 
+    right:
+      - icon: github
+        href: https://github.com/INFO523-Fall25-101-201/final-project-min-set-khant-solo
+      - text: Live Site
+        href: https://minsetkhant.quarto.pub/info-523--bmw-price-prediction/
+
 format:
   html:
     theme:
       light: flatly
       dark: darkly
+    font-sans: system-ui
     toc: true
